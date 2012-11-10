@@ -1,10 +1,4 @@
-function stats = countryStatistics()
-
-    datafile = 'data/results.csv';
-    
-    countries = loadCountries();
-    data = loadData(datafile);
-    
+function stats = countryStatistics(data,countries)
     
     for ii = 1:length(countries)
        
@@ -17,6 +11,7 @@ function stats = countryStatistics()
         this.opponent = [data.awayteam(ihome); data.hometeam(iaway)];
         this.score    = [data.homescore(ihome); data.awayscore(iaway)];
         this.opponentscore = [data.awayscore(ihome); data.homescore(iaway)];
+        this.home = [ones(size(ihome)); zeros(size(iaway))];
         
         stats(ii) = this;
         

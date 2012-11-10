@@ -4,14 +4,12 @@ import os
 
 from bs4 import BeautifulSoup
 
-if __name__ == '__main__':
-    run()
-
 def run():
     outfile = 'data/results.csv'
     tmpfile = 'data/tmp.csv'
 
-    os.remove(tmpfile)
+    if os.path.isfile(tmpfile):
+        os.remove(tmpfile)
     
     for country in get_country_names():
         result = get_country_data(country)
@@ -88,3 +86,6 @@ def write_results(results,outfile):
 
     f.close()
 
+
+if __name__ == '__main__':
+    run()
