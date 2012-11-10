@@ -5,8 +5,6 @@ function out = winProbability(data,smooth)
     end
 
     countries = {data.name};
-
-    prob = NaN(length(countries));
     
     out.pwin  = NaN(length(countries));
     out.plose = NaN(length(countries));

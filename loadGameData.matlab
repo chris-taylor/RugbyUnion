@@ -1,4 +1,4 @@
-function data = loadData(filename)
+function data = loadGameData(filename)
 
     fid = fopen(filename,'r');
 
