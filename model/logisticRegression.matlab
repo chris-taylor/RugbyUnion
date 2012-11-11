@@ -6,7 +6,7 @@ function model = logisticRegression(y,X,lambda)
     
     X = [repmat(1, size(X,1), 1) X];
     
-    f = @(theta) costFunction(y,X,lambda,theta);
+    f = @(theta) logisticRegressionCostFunction(y,X,lambda,theta);
     
     theta0 = 0.01 * randn(size(X,2),1);
     
