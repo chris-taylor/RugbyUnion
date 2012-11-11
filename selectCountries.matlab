@@ -18,10 +18,6 @@ function data = selectCountries(data,countries,or)
         loc = loc1 & loc2;
     end
     
-    data.date = data.date(loc);
-    data.hometeam = data.hometeam(loc);
-    data.awayteam = data.awayteam(loc);
-    data.homescore = data.homescore(loc);
-    data.awayscore = data.awayscore(loc);
+    data = filterStruct(data,loc);
 
 end

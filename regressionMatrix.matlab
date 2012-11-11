@@ -1,24 +1,22 @@
-function out = regressionMatrix(data)
+function data = regressionMatrix(data)
     
     n = size(data.date,1);
 
-    out.countries = union(data.hometeam, data.awayteam);
-
-    out.date    = data.date;
-    out.homewin = data.homescore > data.awayscore;
-    out.draw    = data.homescore == data.awayscore;
-    out.awaywin = data.homescore < data.awayscore;
+    data.countries = union(data.hometeam, data.awayteam);
+    data.homewin   = data.homescore > data.awayscore;
+    data.draw      = data.homescore == data.awayscore;
+    data.awaywin   = data.homescore < data.awayscore;
     
-    out.X = zeros(n, length(out.countries));
+    data.X = zeros(n, length(data.countries));
     
     for ii = 1:n
        
-        ihome = strmatch(data.hometeam{ii},out.countries,'exact');
-        iaway = strmatch(data.awayteam{ii},out.countries,'exact');
+        ihome = strmatch(data.hometeam{ii},data.countries,'exact');
+        iaway = strmatch(data.awayteam{ii},data.countries,'exact');
         
-        out.X(ii,ihome) = 1;
-        out.X(ii,iaway) = -1;
-        
+        data.X(ii,ihome) = 1;
+        data.X(ii,iaway) = -1;
+
     end
 
 end

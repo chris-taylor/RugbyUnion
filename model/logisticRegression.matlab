@@ -4,7 +4,7 @@ function model = logisticRegression(y,X,lambda)
         lambda = 0;
     end
     
-    X = [repmat(1, size(X,1), 1) X];
+    X = addones(X);
     
     f = @(theta) logisticRegressionCostFunction(y,X,lambda,theta);
     
@@ -18,6 +18,6 @@ function model = logisticRegression(y,X,lambda)
     model.name = 'logisticRegression';
     model.theta = thetamin;
     model.lambda = lambda;
-    model.predict = @(x) sigmoid([repmat(1,size(x,1),1) x] * model.theta);
+    model.predict = @(x) sigmoid(addones(x) * model.theta);
 
 end
