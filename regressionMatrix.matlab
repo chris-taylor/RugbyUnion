@@ -2,7 +2,6 @@ function data = regressionMatrix(data)
     
     n = size(data.date,1);
 
-    data.countries = union(data.hometeam, data.awayteam);
     data.homewin   = data.homescore > data.awayscore;
     data.draw      = data.homescore == data.awayscore;
     data.awaywin   = data.homescore < data.awayscore;

@@ -11,6 +11,7 @@ function data = loadGameData(filename)
     data.homescore = csv{3};
     data.awayscore = csv{4};
     data.awayteam  = csv{5};
+    data.countries = union(data.hometeam, data.awayteam);
     
     fclose(fid);
 

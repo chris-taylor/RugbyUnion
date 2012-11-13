@@ -9,6 +9,7 @@ function data = selectCountries(data,countries,or)
         or = false;
     end
     
+    
     loc1 = cellfun(@(c) ismember(c,countries), data.hometeam);
     loc2 = cellfun(@(c) ismember(c,countries), data.awayteam);
     
@@ -19,5 +20,7 @@ function data = selectCountries(data,countries,or)
     end
     
     data = filterStruct(data,loc);
+    
+    data.countries = union(data.hometeam, data.awayteam);
 
 end
