@@ -2,6 +2,7 @@ import urllib2
 import csv
 import os
 import mechanize
+import datetime
 
 from bs4 import BeautifulSoup
 
@@ -17,28 +18,50 @@ def run():
     for link in match_links:
         print 'Scraping:', link.text
         response = br.open(link.url + '?view=scorecard')
-        timeline = parse_timeline(response.get_data())
-        write_results(timeline, 'data/' + link.text + '.csv')
+        fname, timeline = parse_timeline(response.get_data())
+        if timeline is not None:
+            write_results(timeline, 'data/' + fname + '.csv')
         
 
 def parse_timeline(html):
 
     bs = BeautifulSoup(html)
 
-    try:
-        # Try to unpack a row of the first table you see, check it has
-        # four elements.
-        rows = bs('table')[3]('tr')
-        a, b, c, d = rows[1]('td')
-    except ValueError:
-        # There's probably a commentary box, so get the next table and hope
-        # that works...
-        rows = bs('table')[4]('tr')
+    # parse header
+    header = bs('head')[0]('title')[0].text
+
+    game, site, title = header.split(' - ')
+    game, date, year = title.split(', ')
+    teams, ground = game.split(' at ')
+    home, away = teams.split(' v ')
+    month, day = date.split(' ')
+
+    date = date + ' ' + year
+    date = datetime.datetime.strptime(date, '%b %d %Y').strftime('%Y%m%d')
+
+    fname = date + '-' + home.replace(' ','') + '-' + away.replace(' ','')
 
 
-    result = [parse_header(rows[0])]
+    # parse content
+    div = bs('div', {'id' : 'scrumContent'})[0]
+    tabs = div('div', {'class' : 'tabbertab'})
 
-    for row in rows[1:]:
+    # try to find a 'Timeline' table
+    table = None
+    for tab in tabs:
+        title = tab('h2')[0].text
+        if 'Timeline' in title:
+            table = tab('table')[0]
+            break
+
+    if table is None:
+        return fname, None
+
+    result = [['time','hometeam','homescore','awayscore','awayteam']]
+
+    homescore, awayscore = 0, 0
+
+    for row in table('tr')[1:]:
 
         time, home, score, away = [td.text for td in row('td')]
 
@@ -54,16 +77,11 @@ def parse_timeline(html):
         if score:
             # If there's a score string, split it to get each team's score
             score = score.split(' - ')
-            homescore = int(score[0])
-            awayscore = int(score[1])
-        else:
-            # Otherwise it's the start of the match, so it's 0 - 0
-            homescore = 0
-            awayscore = 0
+            homescore, awayscore = map(int, score)
 
         result.append([time, home, homescore, awayscore, away])
 
-    return result
+    return fname, result
 
 
 
