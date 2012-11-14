@@ -1,0 +1,29 @@
+time,hometeam,homescore,awayscore,awayteam
+0,start of first half,0,0,start of first half
+6,Ross - penalty goal,3,0,
+10,,3,3,Slade - penalty goal
+24,George - sub on;Briggs - sub off,3,3,
+25,Ross - penalty goal,6,3,
+26,Briggs - sub on;George - sub off,6,3,
+28,,6,8,Carrick-Smith - try
+38,Ross - penalty goal,9,8,
+42,end of first half,9,8,end of first half
+40,start of second half;Brown - sub on;Purdy - sub off;Briggs - sub off;George - sub on,9,8,start of second half
+43,,9,11,Slade - penalty goal
+49,,9,16,Foster - try
+50,,9,18,Slade - conversion
+51,Montanella - sub off;Bristow - sub on,9,18,
+55,,9,18,Budgen - sub off;Tui - sub on
+56,Ross - penalty goal;Denbee - sub off;Balding - sub on,12,18,
+58,Ross - penalty goal,15,18,
+64,,15,23,Nowell - try
+66,Arscott - sub off;Ajuwa - sub on,15,23,Cowan-Dickie - sub on;Moon - sub off;Yeandle - sub on;Clark - sub off
+68,,15,28,Sestaret - try
+69,,15,30,Slade - conversion
+70,Davies - sub on;Runciman - sub off;Parker - sub off;Lewis - sub on,15,30,
+72,,15,35,Sestaret - try
+74,Tideswell - sub on;Bateman - sub off,15,35,
+75,,15,35,Blanchet - sub off;Simmonds - sub on
+77,,15,40,Nowell - try
+78,,15,42,Slade - conversion;Poluleuligaga - sub off;Pope - sub on;sub on;Conlon - sub off;Sestaret - sub off;Gray - sub on
+80,end of second half,15,42,end of second half

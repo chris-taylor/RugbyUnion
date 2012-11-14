@@ -1,0 +1,29 @@
+time,hometeam,homescore,awayscore,awayteam
+0,start of first half,0,0,start of first half
+8,,0,3,Burns - penalty goal
+10,Morgan - penalty goal,3,3,
+16,,3,6,Burns - penalty goal
+20,Morgan - drop goal,6,6,
+25,King - yellow card,6,6,
+26,,6,11,YPT Thomas - try
+27,,6,13,Burns - conversion
+29,Morgan - drop goal,9,13,
+34,Morgan - penalty goal,12,13,
+41,Morgan - penalty goal;end of first half,15,13,end of first half
+40,start of second half,15,13,start of second half
+44,,15,13,Murphy - sub on;YPT Thomas - sub off
+51,,15,13,Lewis - sub on;Burns - sub off
+55,,15,13,Buxton - yellow card
+56,Morgan - penalty goal,18,13,
+57,,18,13,Britton - sub on;d'Apice - sub off
+59,Webb - sub off;Habberfield - sub on;Davies - sub on;Morgan - sub off,18,13,
+60,Davies - penalty goal,21,13,
+64,Grabham - try,26,13,
+66,Grabham - sub off;Edwards - sub on;Rees - sub off;N Thomas - sub on,26,13,Heard - sub on;Chistolini - sub off
+68,Peers - sub off;Hughes - sub on,26,13,
+71,,26,20,Murphy - try;Robson - conversion
+75,,26,25,penalty try
+76,,26,27,Robson - conversion
+78,Allen - try,31,27,
+79,Davies - conversion,33,27,
+80,end of second half,33,27,end of second half
