@@ -7,8 +7,16 @@ import datetime
 from bs4 import BeautifulSoup
 
 def run():
+    
+    print 'Scraping recent matches'
+    scrape('http://www.espnscrum.com/scrum/rugby/match/scores/recent.html')
+
+    print 'Scraping internationals'
+    scrape('http://www.espnscrum.com/scrum/rugby/match/scores/international.html')
+
+def scrape(url):
     br = mechanize.Browser()
-    br.open('http://www.espnscrum.com/scrum/rugby/match/scores/recent.html')
+    br.open(url)
 
     assert br.viewing_html()
 
@@ -97,12 +105,13 @@ def parse_header(row):
 
 def write_results(results,outfile):
 
-    with open(outfile,'w') as f:
-
-        w = csv.writer(f)
-
-        for row in results:
-            w.writerow(row)
+    if os.path.isfile(outfile):
+        return
+    else:
+        with open(outfile,'w') as f:
+            writer = csv.writer(f)
+            for row in results:
+                writer.writerow(row)
 
 
 # if __name__ == '__main__':
