@@ -1,12 +1,16 @@
-function model = logisticRegression(y,X,lambda)
+function model = logisticRegression(y,X,lambda,w)
 
     if nargin < 3
         lambda = 0;
     end
     
+    if nargin < 4
+        w = NaN;
+    end
+    
     X = addones(X);
     
-    f = @(theta) logisticRegressionCostFunction(y,X,lambda,theta);
+    f = @(theta) logisticRegressionCostFunction(y,X,lambda,w,theta);
     
     theta0 = 0.01 * randn(size(X,2),1);
     

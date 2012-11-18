@@ -5,6 +5,10 @@ function cost = evaluateModel(model,data)
     prediction(prediction < 0) = 0;
     prediction(prediction > 1) = 1;
     
-    cost = multinomialLRCostFunction(prediction,[data.homewin data.awaywin data.draw]);
+    actual = [data.homewin, data.awaywin, data.draw];
+    
+    cost.logscore  = multinomialLRCostFunction(prediction,actual);
+    cost.brier     = multinomialBrierScore(prediction,actual);
+    cost.errorrate = multinomialErrorRate(prediction,actual);
 
 end
