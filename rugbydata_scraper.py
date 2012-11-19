@@ -10,6 +10,9 @@ def run():
 
     if os.path.isfile(tmpfile):
         os.remove(tmpfile)
+
+    with open(tmpfile,'w') as f:
+        f.write('date','home_team','home_score','away_score','away_team')
     
     for country in get_country_names():
         result = get_country_data(country)
@@ -17,6 +20,8 @@ def run():
             write_results(result,tmpfile)
 
     remove_duplicate_lines(tmpfile,outfile)
+
+    os.remove(tmpfile)
 
 
 def get_country_data(country):
@@ -73,19 +78,13 @@ def remove_duplicate_lines(fin,fout):
 
 
 def write_results(results,outfile):
-    try:
-        f = open(outfile,'a')
-    except:
-        f = open(outfile,'w')
-        f.write('data,home_team,home_score,away_score,away_team\n')
 
-    w = csv.writer(f)
+    with open(outfile,'a') as f:
 
-    for row in results:
-        w.writerow(row)
+        w = csv.writer(f)
 
-    f.close()
-
+        for row in results:
+            w.writerow(row)
 
 if __name__ == '__main__':
     run()
