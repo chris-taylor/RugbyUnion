@@ -4,7 +4,7 @@ function data = loadGameData(filename)
 
     fmt = '%s %s %d %d %s';
 
-    csv = textscan(fid,fmt,'delimiter',',');
+    csv = textscan(fid,fmt,'delimiter',',','headerlines',1);
 
     data.date      = datenum(char(csv{1}));
     data.hometeam  = csv{2};
