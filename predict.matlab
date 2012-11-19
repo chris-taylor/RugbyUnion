@@ -1,4 +1,8 @@
-function y = predict(model,home,away)
+function y = predict(model,home,away,homeadv)
+
+    if nargin < 4
+        homeadv = true;
+    end
 
     ihome = strmatch(home,model.countries);
     iaway = strmatch(away,model.countries);
@@ -8,6 +12,10 @@ function y = predict(model,home,away)
     X(ihome) = 1;
     X(iaway) = -1;
     
-    y = model.predict(X);
+    if homeadv
+        y = model.predictHomeAdv(X);
+    else
+        y = model.predictNoHomeAdv(X);
+    end
 
 end

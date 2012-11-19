@@ -1,4 +1,4 @@
-function model = logisticRegression(y,X,lambda,w)
+function model = logisticRegression(y,X,lambda,w,bias)
 
     if nargin < 3
         lambda = 0;
@@ -8,7 +8,17 @@ function model = logisticRegression(y,X,lambda,w)
         w = NaN;
     end
     
-    X = addones(X);
+    if nargin < 5
+        bias = true;
+    end
+    
+    if bias
+        maybeAddBias = @addones;
+    else
+        maybeAddBias = @(x) x;
+    end
+    
+    X = maybeAddBias(X);
     
     f = @(theta) logisticRegressionCostFunction(y,X,lambda,w,theta);
     
@@ -22,6 +32,6 @@ function model = logisticRegression(y,X,lambda,w)
     model.name = 'logisticRegression';
     model.theta = thetamin;
     model.lambda = lambda;
-    model.predict = @(x) sigmoid(addones(x) * model.theta);
+    model.predict = @(x) sigmoid(maybeAddBias(x) * model.theta);
 
 end

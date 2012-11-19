@@ -14,23 +14,42 @@ function model = logisticModel(data,lambda,eta)
     
     weights = exp( -eta * (datenum(date) - data.date) );
     
-    homeWin = logisticRegression(data.homewin,data.X,lambda,weights);
-    awayWin = logisticRegression(data.awaywin,data.X,lambda,weights);
-    draw    = logisticRegression(data.draw,data.X,lambda);
+    % Model with home advantage
+    
+    homeWinH = logisticRegression(data.homewin,data.X,lambda,weights);
+    awayWinH = logisticRegression(data.awaywin,data.X,lambda,weights);
+    drawH    = logisticRegression(data.draw,data.X,lambda,weights);
+    
+    % Model with no home advantage
+    
+    homeWinN = logisticRegression(data.homewin,data.X,lambda,weights,false);
+    awayWinN = logisticRegression(data.awaywin,data.X,lambda,weights,false);
+    drawN    = logisticRegression(data.draw,data.X,lambda,weights,false);
+    
     
     model.countries = data.countries;
-    model.homeWin = homeWin;
-    model.awayWin = awayWin;
-    model.draw    = draw;
-    model.predict = @predictor;
+    model.adv.homeWin = homeWinH;
+    model.adv.awayWin = awayWinH;
+    model.adv.draw    = drawH;
+    model.noAdv.homeWin = homeWinN;
+    model.noAdv.awayWin = awayWinN;
+    model.noAdv.draw    = drawN;
+    model.predictHomeAdv   = @predictorH;
+    model.predictNoHomeAdv = @predictorN;
     
-    function y = predictor(x)
+    function y = predictorH(x)
         x = addones(x);
-        y(:,1) = sigmoid(x * model.homeWin.theta);
-        y(:,2) = sigmoid(x * model.awayWin.theta);
-        y(:,3) = sigmoid(x * model.draw.theta);
+        y(:,1) = sigmoid(x * model.adv.homeWin.theta);
+        y(:,2) = sigmoid(x * model.adv.awayWin.theta);
+        y(:,3) = sigmoid(x * model.adv.draw.theta);
         y = bsxfun(@rdivide,y,sum(y,2));
-%         max(1 - sum(y,2), 0);
+    end
+    
+    function y = predictorN(x)
+        y(:,1) = sigmoid(x * model.noAdv.homeWin.theta);
+        y(:,2) = sigmoid(x * model.noAdv.awayWin.theta);
+        y(:,3) = sigmoid(x * model.noAdv.draw.theta);
+        y = bsxfun(@rdivide,y,sum(y,2));
     end
 
 end
