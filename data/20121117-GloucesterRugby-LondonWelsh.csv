@@ -1,0 +1,30 @@
+time,hometeam,homescore,awayscore,awayteam
+0,start of first half,0,0,start of first half
+1,Cook - yellow card,0,0,
+4,Burns - penalty goal,3,0,
+7,Monahan - try,8,0,
+8,Burns - conversion,10,0,
+10,,10,3,Ross - penalty goal
+19,,10,6,Ross - penalty goal
+21,Morgan - try,15,6,
+22,Burns - conversion,17,6,
+25,Burns - penalty goal,20,6,
+29,Qera - try;Burns - conversion,27,6,Corker - yellow card
+35,,27,6,Jewell - sub off;Lewis - sub on
+36,Morgan - try,32,6,
+37,Burns - conversion,34,6,
+41,end of first half;James - sub off;Graulich - sub on,34,6,end of first half
+40,Moriarty - sub on;Qera - sub off,34,6,Ion - sub off;Tideswell - sub on
+41,James - sub off;Graulich - sub on,34,6,
+40,start of second half,34,6,start of second half
+50,Britton - sub on;Edmonds - sub off;Wood - sub off;Murphy - sub on,34,6,
+54,,34,6,Joly - sub on;Bristow - sub off;Runciman - sub on;Stevenson - sub off
+59,,34,13,Scott - try;Ross - conversion
+61,Harden - sub off;Chistolini - sub on;Burns - sub off;Molenaar - sub on;Locke - sub on;Twelvetrees - sub off,34,13,
+64,Britton - try,39,13,
+66,Lewis - sub on;Cowan - sub off,39,13,Hills - sub off;Bateman - sub on;Corker - sub off;Jackson - sub on;Balding - sub off;Spivey - sub on
+70,,39,13,Ross - sub off;Davies - sub on
+73,Morgan - try,44,13,
+74,Cook - conversion,46,13,
+76,,46,20,Tideswell - try;Davies - conversion
+81,end of second half,46,20,end of second half

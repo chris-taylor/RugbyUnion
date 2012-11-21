@@ -1,0 +1,33 @@
+time,hometeam,homescore,awayscore,awayteam
+0,start of first half,0,0,start of first half
+3,Michalak - penalty goal,3,0,
+4,,3,5,Bosch - try
+5,,3,7,Sanchez - conversion
+9,,3,10,Sanchez - penalty goal
+13,,3,13,Sanchez - penalty goal
+17,Clerc - try,8,13,
+19,Michalak - conversion,10,13,
+21,Clerc - try;Michalak - conversion,17,13,
+33,Nyanga Kabasele - try,22,13,
+34,Michalak - conversion,24,13,
+40,end of first half,24,13,end of first half
+40,start of second half,24,13,start of second half
+44,,24,16,Sanchez - penalty goal
+46,Michalak - drop goal,27,16,
+47,,27,16,Creevy - sub on;Guinazu - sub off
+50,Szarzewski - sub off;Kayser - sub on;Domingo - sub on;Forestier - sub off,27,16,Senatore - sub off;de la Vega - sub on
+55,,27,19,Sanchez - penalty goal
+56,Machenaud - sub off;Parra - sub on,27,19,
+58,,27,19,Tiesi - sub off;Camacho - sub on
+59,Michalak - penalty goal,30,19,
+60,Maestri - sub off;Suta - sub on,30,19,Figallo - sub off;Gomez Kodela - sub on;Farias Cabello - sub off;Vallejos Cinalli - sub on
+62,Huget - sub on;Fritz - sub off,30,19,Cubelli - sub on;Landajo - sub off
+65,,30,22,Sanchez - drop goal
+67,Michalak - penalty goal,33,22,
+68,Trinh-Duc - sub on;Dulin - sub off;Debaty - sub on;Mas - sub off,33,22,
+72,Michalak - penalty goal,36,22,Ayerza - sub off;Lobo - sub on
+73,Picamoles - sub off;Chouly - sub on,36,22,Agulla - sub off;Tuculet - sub on
+77,Michalak - penalty goal,39,22,
+83,end of second half;end of half,39,22,end of second half;end of half
+0,,39,22,
+83,,39,22,
