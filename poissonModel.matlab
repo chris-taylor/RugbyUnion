@@ -12,49 +12,68 @@ function model = poissonModel(data)
     
     theta0 = [c; gamma; a; d];
     
-    f = @(theta) modelLL(n,theta,XH,XA,data.homescore,data.awayscore);
+    f = @(theta) negativeLL(n,theta,XH,XA,data.homescore,data.awayscore);
     
     opts = optimset();
     opts.GradObj = 'on';
+    opts.Display = 'iter';
     
     lb = -30 * ones(2*n+2,1);
     ub = +30 * ones(2*n+2,1);
+    %lb = zeros(2*n+2,1);
+    %ub = 30 * ones(2*n+2,1);
     
-    theta = fmincon(f,theta0,[],[],[],[],lb,ub,[],opts);
+    [theta fval] = fmincon(f,theta0,[],[],[],[],lb,ub,[],opts);
     
     model.c     = theta(1);
     model.gamma = theta(2);
     model.a     = theta(3:n+2);
     model.d     = theta(n+3:2*n+2);
     model.countries = data.countries;
-    model.predict = @predict;
+    model.predictHomeAdv   = @predictHomeAdv;
+    model.predictNoHomeAdv = @predictNoHomeAdv;
     
-    function p = predict(home,away)
-       
-        ihome = strmatch(home,model.countries,'exact');
-        iaway = strmatch(away,model.countries,'exact');
-        
-        lambda = model.c + model.gamma + model.a(ihome) - model.d(iaway);
-        mu     = model.c - model.gamma + model.a(iaway) - model.d(ihome);
-        
-        homeps = stats.poissonpdf(0:200,lambda);
-        awayps = stats.poissonpdf(0:200,mu);
-        
-        P = kron(homeps', awayps);
+    fprintf('Optimal fval: %.4f\n',fval)
+    
+    function p = predictHomeAdv(XH,XA)
+        lambda = model.c + model.gamma + XH * model.a - XA * model.d;
+        mu     = model.c - model.gamma + XA * model.a - XH * model.d;
+        p      = predict(lambda,mu);
+    end
+
+    function p = predictNoHomeAdv(XH,XA)
+        lambda = model.c + XH * model.a - XA * model.d;
+        mu     = model.c + XA * model.a - XH * model.d;
+        p      = predict(lambda,mu);
+    end
+    
+    function p = predict(lambda,mu)
         
         [x y] = ndgrid(0:200);
+        p     = zeros(length(lambda),3);
         
-        p(1) = sum(sum(P(x>y)));
-        p(2) = sum(sum(P(x==y)));
-        p(3) = sum(sum(P(x<y)));
+        ihomewin = x > y;
+        idraw    = x == y;
+        iawaywin = x < y;
+        
+        for ii = 1:length(lambda)
+            homeps = stats.poissonpdf(0:200,lambda(ii));
+            awayps = stats.poissonpdf(0:200,mu(ii));
+            P = kron(homeps', awayps);
+        
+            p(ii,1) = sum(sum(P(ihomewin)));
+            p(ii,2) = sum(sum(P(idraw)));
+            p(ii,3) = sum(sum(P(iawaywin)));
+        end
         
     end
 
 end
 
-function [f grad] = modelLL(n,theta,XH,XA,x,y)
+function [f grad] = negativeLL(n,theta,XH,XA,x,y)
 
     T = length(x);
+    v = 0.001;
 
     % Unpack params
     c     = theta(1);
@@ -76,7 +95,12 @@ function [f grad] = modelLL(n,theta,XH,XA,x,y)
     
     grad = [dL_dc; dL_dg; dL_da; dL_dd]/T;
     
-    f = -f;
-    grad = -grad;
+    % Want to return negative log likelihood for minimizing. Also take care
+    % of regularization in this step.
+    
+    theta(1) = 0; % Don't penalize mean.
+    
+    f    = -f + v * norm(theta)^2;
+    grad = -grad + v * theta;
 
 end

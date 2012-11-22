@@ -26,9 +26,10 @@ function data = loadGameData(filename,countries)
                 'World XV'
                 'Barbarians'};
     
-    loc = ~cellfun(@(c)ismember(c,allstars),data.countries);
+    loc1 = ~cellfun(@(c)ismember(c,allstars),data.hometeam);
+    loc2 = ~cellfun(@(c)ismember(c,allstars),data.awayteam);
     
-    data = filterStruct(data,loc);
+    data = filterStruct(data,loc1&loc2);
     
     % Only use data from 1 April 1992 (start of modern point system)
     

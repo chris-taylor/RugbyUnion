@@ -7,15 +7,16 @@ function y = predict(model,home,away,homeadv)
     ihome = strmatch(home,model.countries);
     iaway = strmatch(away,model.countries);
     
-    X = zeros(1, length(model.countries));
+    XH = zeros(1, length(model.countries));
+    XA = zeros(1, length(model.countries));
     
-    X(ihome) = 1;
-    X(iaway) = -1;
+    XH(ihome) = 1;
+    XA(iaway) = 1;
     
     if homeadv
-        y = model.predictHomeAdv(X);
+        y = model.predictHomeAdv(XH,XA);
     else
-        y = model.predictNoHomeAdv(X);
+        y = model.predictNoHomeAdv(XH,XA);
     end
 
 end
