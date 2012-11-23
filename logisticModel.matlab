@@ -20,25 +20,26 @@ function model = logisticModel(data,lambda,eta)
     awayWin = logisticRegression(data.awaywin,data.X,lambda,weights);
     draw    = logisticRegression(data.draw,abs(data.X),lambda,weights);
     
-    model.countries = data.countries;
+    model.teams = data.teams;
     model.homeWin = homeWin;
     model.awayWin = awayWin;
     model.draw    = draw;
     model.predictHomeAdv   = @predictorAdv;
     model.predictNoHomeAdv = @predictorNoAdv;
     
-    function y = predictorAdv(x)
-        x = addones(x);
+    function y = predictorAdv(xh,xa)
+        x = addones(xh-xa);
         y(:,1) = sigmoid(x * model.homeWin.theta);
-        y(:,2) = sigmoid(x * model.awayWin.theta);
-        y(:,3) = sigmoid(x * model.draw.theta);
+        y(:,2) = sigmoid(abs(x) * model.draw.theta);
+        y(:,3) = sigmoid(x * model.awayWin.theta);
         y = bsxfun(@rdivide,y,sum(y,2));
     end
     
-    function y = predictorNoAdv(x)
+    function y = predictorNoAdv(xh,xa)
+        x = xh - xa;
         y(:,1) = sigmoid(addzeros(x) * model.homeWin.theta);
-        y(:,2) = sigmoid(addzeros(x) * model.awayWin.theta);
-        y(:,3) = sigmoid(addones(x) * model.draw.theta);
+        y(:,2) = sigmoid(addones(abs(x)) * model.draw.theta);
+        y(:,3) = sigmoid(addzeros(x) * model.awayWin.theta);
         y = bsxfun(@rdivide,y,sum(y,2));
     end
 

@@ -1,7 +1,7 @@
-function data = loadGameData(filename,countries)
+function data = loadGameData(filename,teams)
 
     if nargin < 2
-        countries = {};
+        teams = {};
     end
 
     fid = fopen(filename,'r');
@@ -17,7 +17,7 @@ function data = loadGameData(filename,countries)
     data.homescore = double(csv{3});
     data.awayscore = double(csv{4});
     data.awayteam  = csv{5};
-    data.countries = union(data.hometeam, data.awayteam);
+    data.teams     = union(data.hometeam, data.awayteam);
     
     % Filter out 'all-star' teams
     
@@ -37,8 +37,8 @@ function data = loadGameData(filename,countries)
     
     % Select countries
     
-    if ~isempty(countries)
-        data = selectCountries(data,countries,true);
+    if ~isempty(teams)
+        data = selectCountries(data,teams,true);
     end
     
     % Add regression matrix

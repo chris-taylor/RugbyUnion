@@ -27,8 +27,6 @@ function model = logisticRegression(y,X,lambda,w,bias)
     opts = optimset();
     opts.GradObj = 'on';
     
-    keyboard
-    
     thetamin = fminunc(f,theta0,opts);
     
     model.name = 'logisticRegression';

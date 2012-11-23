@@ -3,63 +3,60 @@ function model = poissonModel(data)
     XH = data.X;  XH(XH<0) = 0;
     XA = -data.X; XA(XA<0) = 0;
     
-    n = length(data.countries);
+    triesModel       = fitPoisson(data.hometries, data.awaytries, XH, XA);
+    penaltiesModel   = fitPoisson(data.homepens + data.homedrops, data.awaypens + data.awaydrops, XH, XA);
+    conversionsModel = fitConversions(data.hometries, data.homecons, data.awaytries, data.awaycons, XH, XA);
     
-    c     = 25;
-    gamma = 0;
-    a = zeros(n,1);
-    d = zeros(n,1);
-    
-    theta0 = [c; gamma; a; d];
-    
-    f = @(theta) negativeLL(n,theta,XH,XA,data.homescore,data.awayscore);
-    
-    opts = optimset();
-    opts.GradObj = 'on';
-    opts.Display = 'iter';
-    
-    lb = -30 * ones(2*n+2,1);
-    ub = +30 * ones(2*n+2,1);
-    %lb = zeros(2*n+2,1);
-    %ub = 30 * ones(2*n+2,1);
-    
-    [theta fval] = fmincon(f,theta0,[],[],[],[],lb,ub,[],opts);
-    
-    model.c     = theta(1);
-    model.gamma = theta(2);
-    model.a     = theta(3:n+2);
-    model.d     = theta(n+3:2*n+2);
-    model.countries = data.countries;
+    model.tries = triesModel;
+    model.pens = penaltiesModel;
+    model.cons = conversionsModel;
+    model.teams = data.teams;
     model.predictHomeAdv   = @predictHomeAdv;
     model.predictNoHomeAdv = @predictNoHomeAdv;
     
-    fprintf('Optimal fval: %.4f\n',fval)
-    
     function p = predictHomeAdv(XH,XA)
-        lambda = model.c + model.gamma + XH * model.a - XA * model.d;
-        mu     = model.c - model.gamma + XA * model.a - XH * model.d;
-        p      = predict(lambda,mu);
+        lambda_t_h = model.tries.c + model.tries.g + XH * model.tries.a - XA * model.tries.d;
+        lambda_t_a = model.tries.c - model.tries.g + XA * model.tries.a - XH * model.tries.d;
+        
+        lambda_p_h = model.pens.c + model.pens.g + XH * model.pens.a - XA * model.pens.d;
+        lambda_p_a = model.pens.c - model.pens.g + XA * model.pens.a - XH * model.pens.d;
+        
+        conv_h = XH * model.cons.p;
+        conv_a = XA * model.cons.p;
+        
+        p = predict(lambda_t_h,lambda_p_h,conv_h,lambda_t_a,lambda_p_a,conv_a);
     end
 
     function p = predictNoHomeAdv(XH,XA)
-        lambda = model.c + XH * model.a - XA * model.d;
-        mu     = model.c + XA * model.a - XH * model.d;
-        p      = predict(lambda,mu);
+        lambda_t_h = model.tries.c + XH * model.tries.a - XA * model.tries.d;
+        lambda_t_a = model.tries.c + XA * model.tries.a - XH * model.tries.d;
+        
+        lambda_p_h = model.pens.c + XH * model.pens.a - XA * model.pens.d;
+        lambda_p_a = model.pens.c + XA * model.pens.a - XH * model.pens.d;
+        
+        conv_h = XH * model.cons.p;
+        conv_a = XA * model.cons.p;
+        
+        p = predict(lambda_t_h,lambda_p_h,conv_h,lambda_t_a,lambda_p_a,conv_a);
     end
     
-    function p = predict(lambda,mu)
+    function p = predict(th,ph,ch,ta,pa,ca)
         
-        [x y] = ndgrid(0:200);
-        p     = zeros(length(lambda),3);
+        n = length(th);
+        [x y] = ndgrid(0:150);
+        p     = zeros(n,3);
+        
+        scores = (0:150)';
         
         ihomewin = x > y;
         idraw    = x == y;
         iawaywin = x < y;
         
-        for ii = 1:length(lambda)
-            homeps = stats.poissonpdf(0:200,lambda(ii));
-            awayps = stats.poissonpdf(0:200,mu(ii));
-            P = kron(homeps', awayps);
+        for ii = 1:n
+            probhome = poissonMixturePdf(scores,th(ii),ph(ii),ch(ii));
+            probaway = poissonMixturePdf(scores,ta(ii),pa(ii),ca(ii));
+            
+            P = kron(probhome, probaway');
         
             p(ii,1) = sum(sum(P(ihomewin)));
             p(ii,2) = sum(sum(P(idraw)));
@@ -70,19 +67,53 @@ function model = poissonModel(data)
 
 end
 
+function model = fitConversions(ht,hc,at,ac,XH,XA)
+
+    ntries = XH' * ht + XA' * at;
+    ncons  = XH' * hc + XA' * ac;
+    
+    model.p = ncons ./ ntries;
+
+end
+
+function model = fitPoisson(x,y,XH,XA)
+
+    n = size(XH,2);
+    
+    c = 1;
+    g = 0;
+    a = zeros(n,1);
+    d = zeros(n,1);
+    
+    theta0 = [c; g; a; d];
+    
+    f = @(theta) negativeLL(n,theta,XH,XA,x,y);
+    opts = optimset();
+    opts.GradObj = 'on';
+    opts.Display = 'iter';
+    
+    theta = fminunc(f,theta0,opts);
+    
+    model.c = theta(1);
+    model.g = theta(2);
+    model.a = theta(3:n+2);
+    model.d = theta(n+3:2*n+2);
+
+end
+
 function [f grad] = negativeLL(n,theta,XH,XA,x,y)
 
     T = length(x);
     v = 0.001;
 
     % Unpack params
-    c     = theta(1);
-    gamma = theta(2);
-    a     = theta(3:n+2);
-    d     = theta(n+3:2*n+2);
+    c = theta(1);           % mean scoring rate
+    g = theta(2);           % home advantage
+    a = theta(3:n+2);       % attacking team
+    d = theta(n+3:2*n+2);   % defending team
     
-    lambda = c + XH * a - XA * d + gamma; % home team scoring rate
-    mu     = c + XA * a - XH * d - gamma; % away team scoring rate
+    lambda = c + XH * a - XA * d + g; % home team scoring rate
+    mu     = c + XA * a - XH * d - g; % away team scoring rate
     
     % Value
     f = sum(-lambda - mu + x .* log(lambda) + y .* log(mu))/T;

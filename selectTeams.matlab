@@ -1,4 +1,4 @@
-function data = selectCountries(data,countries,or)
+function data = selectTeams(data,teams,or)
 %SELECTCOUNTRIES Take a subset of a data set, only including games which
 %involve the countries in the cell array 'countries'. If the input 'or' is
 %true, then games which include at least one of the relevant countries are
@@ -10,8 +10,8 @@ function data = selectCountries(data,countries,or)
     end
     
     
-    loc1 = cellfun(@(c) ismember(c,countries), data.hometeam);
-    loc2 = cellfun(@(c) ismember(c,countries), data.awayteam);
+    loc1 = cellfun(@(c) ismember(c,teams), data.hometeam);
+    loc2 = cellfun(@(c) ismember(c,teams), data.awayteam);
     
     if or
         loc = loc1 | loc2;
@@ -21,6 +21,6 @@ function data = selectCountries(data,countries,or)
     
     data = filterStruct(data,loc);
     
-    data.countries = union(data.hometeam, data.awayteam);
+    data.teams = union(data.hometeam, data.awayteam);
 
 end

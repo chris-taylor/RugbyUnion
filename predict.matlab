@@ -4,11 +4,11 @@ function y = predict(model,home,away,homeadv)
         homeadv = true;
     end
 
-    ihome = strmatch(home,model.countries);
-    iaway = strmatch(away,model.countries);
+    ihome = strmatch(home,model.teams);
+    iaway = strmatch(away,model.teams);
     
-    XH = zeros(1, length(model.countries));
-    XA = zeros(1, length(model.countries));
+    XH = zeros(1, length(model.teams));
+    XA = zeros(1, length(model.teams));
     
     XH(ihome) = 1;
     XA(iaway) = 1;

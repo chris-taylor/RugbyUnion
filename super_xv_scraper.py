@@ -82,8 +82,8 @@ def parse_game(html):
 
         if started:
 
-            if is_terminal(string):
-                break
+            # if is_terminal(string):
+            #     break
 
             if contains_team_name(string):
                 i += 1
@@ -106,14 +106,48 @@ def parse_game(html):
         if len(string) < 15 and ('scorers' in string.lower() or 'scoring' in string.lower()):
             started = True
 
+        if len(string) < 50 and 'final score' in string.lower():
+            home, away, home_score, away_score = get_final_score(string)
+
     if i > 0: # represents a successful parse
-        return {'date':date, 'home':parse_scores(scores[0]), 'away':parse_scores(scores[1])}
+        home_breakdown = parse_scores(scores[0])
+        away_breakdown = parse_scores(scores[1])
+        try:
+            check_scores(home_breakdown,home,home_score)
+            check_scores(away_breakdown,away,away_score)
+        except:
+            print ' *** Error, maybe home/away are not defined?'
+            set_trace()
+        return {'date':date, 'home':home_breakdown, 'away':away_breakdown}
     else:
         return None
 
 
-def is_terminal(string):
-    terminals = ['Match Officials','Team','']
+def check_scores(breakdown,team,final_score):
+    if breakdown['team'] != team:
+        print " *** Team name doesn't match"
+        set_trace()
+    summary = summarize_game(breakdown)
+    if 5 * summary['tries'] + 3 * summary['penalties'] + 3 * summary['dropgoals'] + 2 * summary['conversions'] != final_score:
+        print " *** Scores don't match"
+        set_trace()
+
+
+def summarize_game(breakdown):
+    def total(xs):
+        return sum([n for (player,n) in xs])
+    score = breakdown['score']
+    result = {}
+    result['tries'] = total(score['tries'])
+    result['penalties'] = total(score['penalties'])
+    result['conversions'] = total(score['conversions'])
+    result['dropgoals'] = total(score['dropgoals'])
+    return result
+
+
+# def is_terminal(string):
+#     terminals = ['Match Officials','Team','']
+#     return any([s in string for s in terminals])
 
 
 def contains_team_name(string):
@@ -187,6 +221,26 @@ def get_team_name(s):
     return team.strip()
 
 
+def get_final_score(string):
+    split_string = string.replace('Final Score','').split()
+    if len(split_string) == 4:
+        shift = 0
+    elif len(split_string) == 6:
+        shift = 1
+    else:
+        print ' *** Unusual final score line'
+        set_trace()
+    home      = split_string[0]
+    homescore = int(split_string[1])
+    away      = split_string[2+shift]
+    awayscore = int(split_string[3+shift])
+    return home, away, homescore, awayscore
+
+
+def strip_parens(s):
+    return s.lstrip('(').rstrip(')')
+
+
 def get_numbers(xs):
     '''
     This function takes a string consisting of a player name possibly followed by
@@ -196,9 +250,6 @@ def get_numbers(xs):
     >>> get_numbers('J Hobbs 2')  => ('J Hobbs', 2)
     >>> get_numbers('M Keane')    => ('M Keane', 1)
     '''
-
-    def strip_parens(s):
-        return s.lstrip('(').rstrip(')')
 
     def get_number(s):
         tokens = s.split(' ')
