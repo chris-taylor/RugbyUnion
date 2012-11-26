@@ -1,0 +1,22 @@
+function top20 = top20()
+top20 = {
+    'England'
+    'France'
+    'Scotland'
+    'Ireland'
+    'Wales'
+    'Italy'
+    'New Zealand'
+    'Tonga'
+    'Samoa'
+    'South Africa'
+    'Australia'
+    'Fiji'
+    'Canada'
+    'Argentina'
+    'Japan'
+    'United States'
+    'Georgia'
+    'Romania'
+    'Spain'
+    'Russia'};
