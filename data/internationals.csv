@@ -1,0 +1,559 @@
+date,home_team,away_team,home_tries,home_penalties,home_conversions,home_drop_goals,away_tries,away_penalties,away_conversions,away_drop_goals
+2007-09-08,Australia,Japan,10,2,10,0,0,1,0,0
+2007-09-12,Fiji,Japan,4,3,3,0,3,4,2,0
+2007-11-03,Spain,Czech Republic,6,2,5,0,0,0,0,0
+2007-05-26,Fiji,Japan,4,2,0,2,2,1,1,0
+2007-05-11,Kazakhstan,Arabian Gulf,6,2,4,0,0,3,0,0
+2007-05-26,Argentina,Ireland,1,4,1,1,2,2,2,0
+2007-05-19,Poland,Malta,4,1,4,0,0,1,0,0
+2007-06-09,Argentina,Italy,2,4,1,0,0,2,0,0
+2007-11-03,Sweden,Denmark,1,1,0,0,0,2,0,0
+2007-10-20,South Africa,England,0,5,0,0,0,2,0,0
+2007-06-10,Romania,Italy 'A',2,3,0,0,1,1,0,0
+2007-06-09,Australia  'A',Japan,9,1,9,0,1,1,1,0
+2007-05-23,Scotland 'A'',United States,1,2,1,0,0,3,0,0
+2007-06-16,Samoa,Japan,1,2,1,0,0,1,0,0
+2007-10-07,Argentina,Scotland,1,3,1,1,1,2,1,0
+2007-09-07,Argentina,France,1,4,0,0,0,4,0,0
+2007-12-01,Romania,Portugal,2,3,2,0,1,0,0,1
+2007-08-11,France,England,2,3,1,0,0,4,0,1
+2007-09-09,Scotland,Portugal,6,0,8,0,1,1,1,0
+2007-11-24,South Africa,Wales,5,1,3,0,2,0,1,0
+2007-03-24,Cyprus,Greece,5,2,4,0,0,1,0,0
+2007-09-12,Italy,Romania,2,4,1,0,2,2,1,0
+2007-08-18,Botswana,Tanzania,5,3,5,1,2,0,2,0
+2007-06-16,England  Counties,Russia,2,3,2,0,2,3,1,0
+2007-10-27,Slovenia,Finland,4,2,3,0,0,1,0,0
+2007-06-09,New Zealand,France,7,2,5,0,1,1,1,0
+2007-06-16,South Africa,Australia,1,3,1,2,1,4,1,0
+2007-10-19,Argentina,France,5,1,3,0,1,1,1,0
+2007-10-27,Hungary,Norway,1,0,0,0,0,1,0,0
+2007-08-26,France,Wales,4,1,4,0,1,0,1,0
+2007-10-14,South Africa,Argentina,4,3,4,0,1,2,1,0
+2007-09-23,Australia,Fiji,7,3,4,1,2,0,1,0
+2007-05-27,Hong Kong,Korea,3,2,3,0,2,2,2,0
+2007-08-18,Canada,Portugal,6,2,3,0,2,0,1,0
+2007-09-19,Italy,Portugal,3,4,2,0,1,0,0,0
+2007-08-11,Scotland,Ireland,5,0,3,0,2,3,1,0
+2007-05-05,Slovenia,Luxembourg,3,1,2,1,1,3,1,0
+2007-09-16,Samoa,Tonga,0,5,0,0,1,4,1,0
+2007-11-04,Russia,Romania,3,1,2,0,0,4,0,0
+2007-10-06,France,New Zealand,2,2,2,0,2,2,1,0
+2007-08-18,Italy,Japan,5,1,4,0,2,0,1,0
+2007-05-25,New Zealand  Maori,Canada,7,0,7,0,3,2,1,0
+2007-09-29,Australia,Canada,6,1,2,0,0,2,0,0
+2007-12-15,Argentina,Chile,9,0,7,0,1,1,0,0
+2007-09-22,South Africa,Tonga,4,2,2,0,3,1,2,0
+2007-09-22,Argentina,Namibia,5,2,5,0,0,1,0,0
+2007-06-02,South Africa,England,7,1,6,0,1,5,1,0
+2007-09-12,Tonga,United States,3,2,2,0,2,1,1,0
+2007-09-26,Uganda,Kenya,3,3,0,0,2,0,1,0
+2007-09-18,Scotland,Romania,6,0,6,0,0,0,0,0
+2007-06-23,New Zealand,South Africa,2,3,2,1,2,3,1,0
+2007-03-24,France  Universities,Poland,6,2,11,0,0,0,0,0
+2007-07-14,New Zealand,South Africa,3,4,3,0,0,2,0,0
+2007-09-15,Australia,Wales,4,1,3,1,2,2,2,0
+2007-09-29,Germany,Switzerland,7,0,7,0,2,1,0,0
+2007-09-08,New Zealand,Italy,11,1,9,0,2,0,2,0
+2007-11-10,Belgium,Germany,4,2,3,0,2,2,1,0
+2007-11-24,Germany,Moldova,4,2,4,0,1,0,0,0
+2007-09-30,France,Georgia,6,3,5,0,1,0,1,0
+2007-10-27,Croatia,Poland,0,5,0,0,1,3,0,0
+2007-06-02,Australia 'A',Samoa,3,2,3,0,2,1,1,0
+2007-11-10,Croatia,Malta,4,0,2,0,0,3,0,0
+2007-06-09,South Africa,Samoa,5,2,2,0,1,1,0,0
+2007-07-07,Australia,South Africa,3,2,2,0,2,1,2,0
+2007-09-09,Ireland,Namibia,5,1,2,0,2,1,2,0
+2007-05-26,Uganda,Kenya,4,0,3,1,1,1,1,0
+2007-09-06,France  Amateur,Belgium,4,1,2,0,18,2,1,0
+2007-05-18,England Saxons,United States,8,0,3,0,0,1,0,0
+2007-09-26,Samoa,United States,3,1,3,0,2,3,1,0
+2007-08-15,South Africa,Namibia,9,2,12,0,1,2,1,0
+2007-09-14,South Africa,England,3,5,3,0,0,0,0,0
+2007-09-26,Georgia,Namibia,3,3,3,0,0,0,0,0
+2007-09-30,South Africa,Usa,9,1,8,0,2,1,1,0
+2007-06-02,Japan,Tonga,2,2,0,2,3,0,1,0
+2007-05-12,Thailand,Pakistan,5,2,3,0,0,0,0,0
+2007-09-23,New Zealand,Scotland,6,2,2,0,0,0,0,0
+2007-09-09,South Africa,Samoa,8,3,5,0,1,0,1,0
+2007-02-24,Germany,Welsh Districts,3,1,3,0,2,1,0,0
+2007-09-15,New Zealand,Portugal,8,0,14,0,1,1,1,1
+2007-09-16,Fiji,Canada,4,1,3,0,1,3,1,0
+2007-08-18,France,England,1,5,1,0,0,3,0,0
+2007-10-06,England,Australia,0,4,0,0,1,1,1,0
+2007-10-27,Denmark,Serbia,2,1,2,0,2,1,2,0
+2007-09-25,Canada,Japan,2,0,1,0,2,0,1,0
+2007-10-07,South Africa,Fiji,5,2,3,0,2,2,2,0
+2007-08-24,Ireland,Italy,2,2,2,1,2,1,2,1
+2007-09-29,Fiji,Wales,4,4,3,0,5,1,3,0
+2007-10-06,Armenia,Switzerland,3,2,2,1,2,1,1,0
+2007-09-22,England,Samoa,4,4,3,2,1,5,1,0
+2007-07-21,New Zealand,Australia,1,7,0,0,0,3,0,1
+2007-09-28,England,Tonga,4,2,2,2,2,2,2,0
+2007-08-11,Kenya,Uganda,6,1,1,0,2,1,1,0
+2007-09-29,New Zealand,Romania,9,0,10,0,1,1,0,0
+2007-09-20,Wales,Japan,6,1,7,0,2,2,1,0
+2007-06-24,Junior All  Blacks,Japan,7,1,4,0,0,1,0,0
+2007-09-25,Romania,Portugal,2,0,2,0,1,1,1,0
+2007-09-01,Armenia,Sweden,1,1,1,2,2,0,1,0
+2007-05-19,Portugal,Czech Republic,2,3,2,0,0,1,0,0
+2007-09-11,Argentina,Georgia,4,3,2,0,0,1,0,0
+2007-10-06,England,France,1,2,0,1,0,3,0,0
+2007-05-26,Slovenia,Finland,2,3,1,0,0,2,0,0
+2007-09-30,Kenya,Ivory Coast,1,2,0,3,2,1,2,0
+2007-09-29,Scotland,Italy,0,6,0,0,1,3,1,0
+2007-10-27,Luxembourg,Bosnia-Herzegovina,2,6,1,0,0,1,0,0
+2007-09-26,Madagascar,Ivory Coast,2,5,2,1,4,1,1,0
+2007-09-21,France,Ireland,2,2,0,0,0,0,0,1
+2007-08-18,Wales,Argentina,3,2,3,0,2,1,1,0
+2007-09-09,Wales,Canada,5,3,4,0,3,0,1,0
+2007-05-27,Junior All  Blacks,Samoa,5,0,3,0,1,1,1,0
+2007-06-30,Australia,New Zealand,2,2,2,0,2,1,1,0
+2007-05-12,Greece,Slovakia,2,2,2,0,2,1,2,0
+2007-09-30,Uganda,Madagascar,5,5,3,0,1,2,0,0
+2007-06-02,Argentina,Ireland,1,3,1,0,0,0,0,0
+2007-06-02,Canada,United States,6,1,7,0,2,0,0,0
+2007-06-16,New Zealand,Canada,8,0,7,0,1,2,1,0
+2007-06-09,Australia,Fiji,7,1,3,0,0,0,0,0
+2007-08-25,South Africa,Scotland,3,2,3,0,0,1,0,0
+2007-09-15,Ireland,Georgia,2,0,2,0,1,1,1,0
+2007-06-16,Tonga,Fiji,3,2,0,0,2,1,1,0
+2007-11-17,Malta,Latvia,2,2,0,0,2,1,0,0
+2007-06-23,Samoa,Tonga,7,1,4,0,0,1,0,0
+2007-09-16,France,Namibia,8,0,11,0,1,0,1,1
+2007-08-04,England,Wales,8,1,7,0,1,0,0,0
+2008-06-15,Japan,Tonga,4,0,5,0,1,2,1,0
+2008-11-16,Japan,United States,2,4,2,1,3,0,2,0
+2008-11-01,Malta,Sweden,0,3,0,0,0,2,0,0
+2008-06-11,Emerging Springbox,Georgia,1,2,0,0,0,1,0,0
+2008-09-13,New Zealand,Australia,4,0,4,0,3,1,3,0
+2008-06-07,Fiji Xv,Papua New Guinea,7,0,3,0,1,0,0,0
+2008-02-23,Greece,Monaco,3,0,3,0,0,3,0,0
+2008-11-08,United  States,Uruguay,6,1,5,0,0,3,0,0
+2008-03-01,Russia,Portugal,5,4,3,0,2,4,2,0
+2008-10-11,Norway,Austria,1,2,0,0,0,1,0,0
+2008-05-24,Korea,Hong Kong,7,4,5,2,4,0,2,0
+2008-03-08,Russia,Spain,4,6,2,0,1,3,1,0
+2008-03-15,England,Ireland,3,4,3,0,1,1,1,0
+2008-11-08,South Africa,Wales,2,2,2,0,0,5,0,0
+2008-02-16,Portugal,Czech Republic,5,3,4,0,0,1,0,1
+2008-02-09,France,Ireland,4,0,3,0,2,3,1,0
+2008-11-08,New Zealand,Scotland,4,2,3,0,0,2,0,0
+2008-07-05,New Zealand,South Africa,1,4,1,0,1,1,0,0
+2008-06-21,South Africa,Italy,4,0,3,0,0,0,0,0
+2008-11-14,Scotland 'A',Georgia,8,0,7,0,0,1,0,0
+2008-09-27,Hungary,Norway,4,0,3,0,2,1,1,0
+2008-11-15,Bosnia  Herzegovina,Slovakia,8,1,4,0,3,3,3,0
+2008-04-12,Armenia,Denmark,2,4,1,0,2,1,0,0
+2008-06-21,Canada,United States,4,0,3,0,1,1,1,0
+2008-07-05,Tonga,Fiji,4,1,2,0,1,3,1,0
+2008-05-18,Japan,Hong Kong,8,0,10,0,3,4,1,0
+2008-11-22,Pacific  Islands,Italy,3,2,2,0,2,1,2,0
+2008-06-20,Georgia,Italy 'A',3,2,2,0,0,1,0,0
+2008-06-11,Ireland 'A',United States,7,1,4,0,0,3,0,0
+2008-10-25,Croatia,Malta,2,2,1,0,1,3,1,0
+2008-03-08,Wales,Ireland,1,3,1,0,0,4,0,0
+2008-09-13,Slovenia,Hungary,5,1,2,0,4,0,3,0
+2008-11-22,England,South Africa,0,2,0,0,5,3,4,0
+2008-02-23,Georgia,Portugal,1,1,0,1,0,2,0,0
+2008-08-02,Uganda,Madagascar,4,3,2,0,2,4,0,0
+2008-05-24,Bulgaria,Austria,2,2,0,0,0,0,0,0
+2008-06-28,Italy,Argentina,1,2,1,0,0,4,0,0
+2008-06-07,Tanzania,Kenya 'A',1,3,1,0,2,1,1,0
+2008-10-18,Armenia,Switzerland,4,2,3,1,2,1,1,0
+2008-04-26,Austria,Norway,0,1,0,0,0,1,0,0
+2008-06-28,Samoa,Tonga,2,2,2,0,0,5,0,0
+2008-02-23,Wales,Italy,5,4,5,0,1,1,0,0
+2008-03-15,Wales,France,2,5,2,0,0,4,0,0
+2008-11-22,Czech  Republic,Moldova,1,2,0,0,0,3,0,0
+2008-11-08,Welsh Clubs  Xv,Germany,4,1,2,0,1,3,0,0
+2008-07-12,Kenya,Cameroun,9,0,9,1,0,0,0,0
+2008-08-16,New Zealand,South Africa,3,0,2,0,0,0,0,0
+2008-06-07,South Africa,Wales,4,5,4,0,2,1,2,0
+2008-04-12,Georgia,Russia,2,2,1,0,0,4,0,0
+2008-11-08,Australia,Italy,2,6,1,0,1,4,0,1
+2008-04-19,Croatia,Andorra,2,1,1,0,2,0,0,0
+2008-02-03,France,Scotland,3,1,3,0,0,1,0,1
+2008-06-07,Argentina,Scotland,2,4,1,0,0,5,0,0
+2008-08-02,New Zealand,Australia,4,5,2,0,1,1,1,0
+2008-06-14,South Africa,Wales,4,3,4,0,2,3,1,0
+2008-06-11,Italy 'A',Russia,5,3,2,0,2,1,1,0
+2008-06-28,New Zealand  Maori,Japan,9,1,6,0,3,2,1,0
+2008-11-29,England,New Zealand,0,2,0,0,0,5,1,0
+2008-05-10,Spain,Portugal,3,0,3,0,2,1,2,0
+2008-11-15,England,Australia,1,2,0,1,1,7,1,0
+2008-06-14,New Zealand,England,4,3,4,0,2,2,2,0
+2008-05-03,Hong Kong,Kazakhstan,3,2,1,0,2,1,2,0
+2008-11-22,Australia,France,2,2,1,0,1,1,1,1
+2008-05-24,Finland,Luxembourg,1,2,0,0,1,1,1,0
+2008-11-14,Wales,Canada,5,1,3,0,1,2,1,0
+2008-05-24,Uganda,Kenya,2,2,2,0,0,1,0,0
+2008-01-06,Hong Kong,China-Taipei,9,0,7,0,2,1,2,0
+2008-10-11,Greece,Finland,2,0,1,0,1,1,1,0
+2008-08-16,Kenya,Uganda,4,4,2,1,3,1,1,0
+2008-11-08,Ireland,Canada,8,1,6,0,0,0,0,0
+2008-04-05,Hong Kong,Tunisia,1,6,1,0,2,0,1,0
+2008-04-19,Germany,Ukraine,1,1,1,1,1,0,0,0
+2008-08-30,South Africa,Australia,8,1,5,0,1,1,0,0
+2008-09-13,Armenia,Serbia,5,2,2,2,0,0,0,0
+2008-11-08,Argentina,Chile,6,0,8,0,0,1,0,0
+2008-12-06,Serbia,Andorra,4,2,3,0,1,0,1,0
+2008-07-26,Australia,New Zealand,4,1,4,1,3,0,2,0
+2008-04-19,Russia,Czech Republic,5,2,4,0,0,1,0,0
+2008-02-10,England,Italy,2,3,2,0,1,4,1,0
+2008-08-23,Australia,South Africa,3,2,3,0,2,1,1,0
+2008-02-02,Georgia,Portugal,4,0,3,0,0,1,0,0
+2008-04-26,Hong Kong,Arabian Gulf,2,2,2,0,0,2,0,2
+2008-11-15,New Zealand,Ireland,3,1,2,0,0,1,0,0
+2008-11-01,Canada,Portugal,2,3,1,0,1,2,1,0
+2008-04-26,Sweden,Serbia,3,1,2,0,0,1,0,0
+2008-09-05,France  Amateur,Russia,3,4,1,0,4,0,4,0
+2008-05-24,Serbia,Armenia,3,0,2,0,1,1,0,0
+2008-11-29,Wales,Australia,2,2,1,1,2,1,1,1
+2008-03-29,Georgia,Czech Republic,3,1,2,0,0,1,0,0
+2008-06-07,Scotland 'A',Canada,4,0,3,0,1,1,1,0
+2008-06-08,Australia  'A',Japan,6,0,0,0,2,2,1,1
+2008-02-09,Georgia,Romania,1,4,1,1,1,0,1,0
+2008-06-28,Australia,France,4,2,4,0,1,2,1,0
+2008-11-08,Russia,Spain,4,3,3,0,2,1,1,0
+2008-08-09,South Africa,Argentina,7,0,9,0,0,3,0,0
+2008-02-09,Wales,Scotland,3,3,3,0,0,5,0,0
+2008-04-19,Slovenia,Luxembourg,1,1,1,0,0,1,0,0
+2008-07-05,Australia,France,4,4,4,0,1,1,1,0
+2008-06-07,Fiji,Samoa,5,1,3,0,3,0,1,0
+2008-11-15,France,Pacific Islanders,5,3,4,0,1,4,0,0
+2008-06-22,Fiji,Japan,3,1,3,0,0,4,0,0
+2008-11-22,New Zealand,Wales,2,5,2,0,0,3,0,0
+2008-11-15,Argentina,Italy,1,5,1,0,1,3,0,0
+2008-01-09,Hong Kong,China-Taipei,8,0,6,0,4,1,2,0
+2008-04-26,Japan,Korea,7,0,2,0,2,1,2,0
+2008-11-08,England,Pacific Islanders,5,2,4,0,1,2,1,0
+2008-05-31,Israel,Finland,3,1,2,0,2,0,1,0
+2008-11-15,Poland,Czech Republic,1,2,1,0,1,0,1,0
+2008-06-15,Romania,Russia,1,2,1,0,0,4,0,0
+2008-06-11,Romania,Uruguay,1,1,1,0,0,2,0,0
+2008-11-01,Slovenia,Denmark,3,2,2,0,3,0,2,0
+2008-07-05,Samoa,Japan,5,2,3,0,4,1,4,0
+2008-11-15,Israel,Bulgaria,1,2,0,0,1,1,0,0
+2008-04-20,Bosnia-Herzegovina,Israel,4,1,2,0,3,0,2,0
+2008-11-15,South Africa,Scotland,1,3,0,0,1,1,1,0
+2008-05-17,Finland,Bosnia Herzegovina,0,1,0,0,0,1,0,0
+2008-11-22,Scotland,Canada,6,1,4,0,0,0,0,0
+2008-08-30,Niue,New Caledonia,5,1,0,0,1,0,0,0
+2008-06-14,Australia,Ireland,2,2,1,0,2,0,1,0
+2008-02-23,Romania,Spain,3,0,1,0,1,2,0,0
+2008-11-16,Moldova,Belgium,3,1,1,0,1,1,0,0
+2008-05-03,Japan,Arabian Gulf,10,0,12,0,0,2,0,0
+2008-10-18,Brazil,Trinidad And Tobago,4,0,2,0,0,0,0,0
+2008-04-05,Switzerland,Denmark,3,3,2,0,1,2,1,0
+2008-02-02,Wales,England,2,4,2,0,1,3,1,1
+2008-11-01,New Zealand,Australia,2,3,0,0,2,2,0,0
+2008-06-15,Georgia,Uruguay,2,2,2,0,0,6,0,0
+2008-02-02,Ireland,Italy,1,3,1,0,1,2,0,0
+2008-07-12,South Africa,New Zealand,2,5,1,1,1,6,1,1
+2008-06-07,New Zealand,Ireland,2,3,1,0,1,2,0,0
+2008-11-08,Netherlands,Latvia,4,1,3,0,2,0,0,0
+2008-04-26,Georgia,Spain,4,0,1,0,2,2,2,0
+2008-11-08,France,Argentina,0,3,0,1,0,2,0,0
+2008-07-19,Australia,South Africa,2,1,0,1,0,3,0,0
+2008-04-12,Belgium,Moldova,1,4,1,1,3,0,2,0
+2008-02-23,Ireland,Scotland,5,1,3,0,1,2,1,0
+2008-03-08,Scotland,England,0,5,0,0,0,3,0,0
+2008-09-03,New Zealand,Samoa,9,0,13,0,2,0,2,0
+2008-11-22,Japan,United States,4,2,3,0,3,0,1,0
+2008-06-14,Scotland,Argentina,2,4,2,0,2,0,2,0
+2008-03-15,Italy,Scotland,2,2,2,1,2,2,2,0
+2008-11-15,Spain,Germany,1,4,1,1,1,2,0,0
+2008-06-07,England  Saxons,United States,8,1,8,0,1,1,1,0
+2008-05-31,Argentina,Uruguay,7,0,4,0,1,1,0,0
+2008-06-21,New Zealand,England,5,3,5,0,2,0,1,0
+2008-03-09,France,Italy,3,2,2,0,1,2,1,0
+2008-10-18,Hungary,Denmark,6,1,3,0,2,0,1,0
+2008-08-16,New  Caledonia,Vanuatu,5,0,2,0,4,0,0,0
+2008-06-14,New Zealand Maori,Fiji,1,2,0,0,1,0,1,0
+2008-10-25,Sweden,Latvia,3,2,0,0,1,0,0,0
+2008-11-29,Bulgaria,Luxembourg,2,2,1,0,1,1,1,0
+2008-07-12,Madagascar,Botswana,4,4,4,0,2,1,1,0
+2008-05-10,Japan,Kazakhstan,8,0,11,0,0,2,0,0
+2008-11-08,Lithuania,Andorra,4,0,3,0,2,0,0,0
+2008-11-01,Belgium,Ukraine,0,3,0,0,1,1,0,0
+2008-02-23,England,France,2,3,1,1,1,2,1,0
+2008-08-02,Tunisia,Kenya,6,2,4,0,2,1,1,0
+2008-11-22,Ireland,Argentina,1,3,0,1,0,1,0,0
+2009-02-07,Georgia,Germany,5,0,4,0,1,0,0,0
+2009-03-14,Wales,Italy,2,2,2,0,0,5,0,0
+2009-02-07,Romania,Spain,2,3,0,0,1,1,1,0
+2009-05-02,Kazakhstan,Korea,3,3,3,0,6,2,5,2
+2009-02-21,Portugal,Germany,5,3,5,0,0,2,0,0
+2009-12-12,Germany,Hong Kong,3,3,0,0,1,3,0,0
+2009-02-15,Ireland,Italy,5,1,5,0,0,3,0,0
+2009-10-24,Serbia,Switzerland,1,2,1,0,1,1,0,0
+2009-01-31,Monaco,Azerbaijan,6,0,4,0,2,0,1,0
+2009-04-25,Bulgaria,Finland,5,0,2,0,2,0,0,0
+2009-04-25,Slovenia,Norway,2,0,2,0,1,0,1,1
+2009-06-13,France,New Zealand,3,2,3,0,2,4,0,0
+2009-11-22,Switzerland,Armenia,2,2,1,0,0,0,0,0
+2009-11-13,Italy 'A',Romania,4,3,2,0,0,2,0,0
+2009-03-15,England,France,5,1,3,0,2,0,0,0
+2009-04-18,Netherlands,Sweden,5,1,4,0,4,0,2,0
+2009-11-07,Malta,Sweden,4,1,1,0,3,2,1,0
+2009-04-04,Serbia,Switzerland,2,0,1,0,0,1,0,1
+2009-11-07,Netherlands,Latvia,7,1,7,0,0,0,0,1
+2009-05-23,Ireland,Canada,3,2,2,0,0,2,0,0
+2009-03-14,Czech  Republic,Belgium,0,5,0,0,2,1,1,0
+2009-11-14,Norway,Austria,0,4,0,0,0,3,0,0
+2009-04-18,Hungary,Austria,4,1,1,0,1,2,1,0
+2009-10-17,Austria,Slovenia,2,1,1,0,1,2,1,0
+2009-03-21,France,Italy,7,3,3,0,1,1,0,0
+2009-03-15,Portugal,Spain,2,4,1,0,1,3,1,1
+2009-08-15,Kenya,Uganda,5,1,1,0,3,0,2,0
+2009-05-30,Poland,Belgium,1,3,0,0,0,1,0,0
+2009-06-21,Russia,Uruguay,4,1,3,0,2,3,2,1
+2009-05-09,Kazakhstan,Singapore,3,1,2,0,1,4,1,0
+2009-03-14,Switzerland,Andorra,3,6,1,0,0,3,0,0
+2009-05-02,Lithuania,Serbia,5,1,6,0,0,3,0,0
+2009-02-14,Wales,England,1,6,0,0,2,1,1,0
+2009-03-21,Ukraine,Czech Republic,3,1,1,0,2,0,0,0
+2009-11-07,Bosnia  Herzegovina,Azerbaijan,1,3,1,0,1,0,0,0
+2009-10-10,Ukraine,Belgium,1,2,1,0,1,1,0,1
+2009-04-18,Malta,Latvia,4,2,3,0,3,0,2,0
+2009-05-09,Israel,Slovenia,2,4,2,0,1,4,1,0
+2009-05-16,Japan,Korea,11,0,10,0,0,3,0,2
+2009-11-07,Namibia,Portugal,0,4,0,0,0,3,0,0
+2009-05-09,Ukraine,Moldova,4,2,3,0,0,0,0,0
+2009-02-28,Russia,Romania,3,3,2,0,3,0,1,0
+2009-06-13,New Zealand,France,1,3,0,0,1,1,1,0
+2009-11-14,Cyprus,Monaco,6,2,4,0,1,0,0,0
+2009-06-16,Scotland 'A',Uruguay,3,2,3,0,0,0,0,1
+2009-06-16,France 'A',Romania,2,2,3,0,1,3,1,0
+2009-10-24,Bulgaria,Luxembourg,3,2,2,0,0,0,0,0
+2009-11-20,Italy 'A',Georgia,1,1,0,0,1,0,1,0
+2009-02-27,France,Wales,2,3,1,0,1,3,1,0
+2009-02-28,Georgia,Spain,5,1,6,0,1,2,0,0
+2009-02-08,Wales,Scotland,4,2,0,0,1,2,1,0
+2009-04-25,Denmark,Austria,4,1,2,0,0,2,0,0
+2009-10-31,Netherlands,Sweden,2,2,0,1,1,3,1,0
+2009-05-16,Poland,Moldova,5,1,1,0,4,2,1,0
+2009-10-17,Norway,Denmark,0,5,0,0,1,1,0,0
+2009-04-11,Greece,Bulgaria,6,1,4,0,1,2,1,0
+2009-02-07,England,Italy,5,1,4,0,1,2,0,0
+2009-10-10,Lithuania,Andorra,7,1,1,0,2,0,1,0
+2009-06-14,Ireland 'A',Georgia,6,2,2,0,1,0,0,0
+2009-04-11,Denmark,Norway,4,0,0,0,0,5,0,1
+2009-05-02,Japan,Hong Kong,6,0,7,0,0,2,0,0
+2009-02-28,Scotland,Italy,2,4,2,0,0,1,0,1
+2009-03-21,England,Scotland,3,2,1,1,0,4,0,0
+2009-05-08,Argentina  'A',Namibia,7,1,7,0,1,0,1,0
+2009-03-22,Georgia,Russia,4,0,2,0,2,3,1,0
+2009-11-14,Georgia,Argentina 'A',2,4,1,0,1,4,1,1
+2009-05-23,Argentina 'A',Uruguay,3,1,1,0,0,3,0,0
+2009-04-25,Netherlands,Malta,4,1,2,0,0,3,0,0
+2009-03-14,Ireland,Scotland,1,4,1,1,0,5,0,0
+2009-12-19,Netherlands,Hong Kong,4,1,1,0,1,1,1,0
+2009-05-09,Lithuania,Armenia,4,0,2,0,1,4,1,0
+2009-06-16,Italy 'A',Russia,5,0,5,0,0,1,0,0
+2009-03-21,Ireland,Wales,2,0,2,1,0,4,0,1
+2009-12-16,Czech  Republic,Hong Kong,2,1,2,0,1,0,0,0
+2009-11-14,Moldova,Czech Republic,7,2,2,0,6,0,0,0
+2009-04-25,Japan,Kazakhstan,8,0,11,0,1,1,1,0
+2009-03-21,Portugal,Romania,1,5,1,0,2,3,1,0
+2009-02-07,Russia,Portugal,2,2,1,0,2,0,2,0
+2009-05-02,Israel,Finland,9,1,6,0,1,1,0,0
+2009-03-21,Slovakia,Monaco,1,1,1,0,2,0,0,0
+2009-05-02,Russia,Germany,5,2,6,0,0,0,0,0
+2009-04-25,Croatia,Latvia,2,3,1,0,1,2,1,0
+2009-10-10,Hungary,Slovenia,3,0,1,0,1,2,0,0
+2009-01-30,England  Saxons,Portugal,10,0,8,0,0,0,0,0
+2009-03-21,Andorra,Armenia,5,1,4,0,1,1,1,0
+2009-09-12,Ukraine,Poland,3,0,2,0,2,0,1,0
+2009-10-31,Denmark,Hungary,4,1,2,0,3,1,0,0
+2009-10-03,Bulgaria,Finland,6,0,3,0,2,1,0,0
+2009-03-14,Georgia,Romania,3,3,2,0,2,3,2,0
+2009-05-20,Argentina  'A',Chile,11,1,8,0,0,2,0,0
+2009-11-07,Luxembourg,Finland,0,3,0,0,0,1,0,0
+2009-11-29,Andorra,Serbia,3,0,3,0,1,0,1,0
+2009-05-02,Croatia,Sweden,3,1,2,0,2,1,0,0
+2009-04-25,Greece,Luxembourg,3,0,1,0,1,3,0,0
+2009-10-10,Bosnia  Herzegovina,Monaco,3,2,1,0,1,1,0,0
+2009-02-14,France,Scotland,1,5,1,0,1,2,1,0
+2009-05-30,Wales,Canada,2,6,2,0,2,3,2,0
+2009-02-14,Portugal,Georgia,2,2,2,0,2,2,2,0
+2009-02-28,Ireland,England,1,2,0,1,1,2,1,0
+2009-02-07,Ireland,France,3,3,3,0,2,2,1,1
+2009-05-23,Japan,Singapore,7,0,5,0,0,5,0,0
+2009-04-25,Chile,Brazil,9,3,10,0,0,1,0,0
+2009-02-14,Romania,Germany,3,1,2,0,0,0,0,0
+2010-11-13,Belgium,Czech Republic,2,4,1,0,0,4,0,0
+2010-04-24,Moldova,Ukraine,3,3,2,0,2,3,0,0
+2010-11-06,Latvia,Malta,4,3,2,0,4,0,3,0
+2010-04-17,Latvia,Sweden,5,0,3,0,5,1,2,0
+2010-10-23,Sweden,Croatia,4,2,3,0,1,2,1,0
+2010-10-02,Switzerland,Armenia,3,3,3,0,3,2,3,0
+2010-11-13,Moldova,Poland,5,1,4,0,3,2,2,0
+2010-06-05,Romania,Ukraine,8,2,5,0,1,0,1,0
+2010-10-30,Croatia,Latvia,1,3,0,0,2,0,1,0
+2010-04-24,Lithuania,Serbia,9,0,6,0,1,0,0,0
+2010-09-29,Tonga,Chile,4,2,3,0,2,6,1,0
+2010-12-15,Hong Kong,Norway,8,0,7,0,2,1,2,0
+2010-04-24,Malta,Latvia,4,1,2,0,2,0,0,0
+2010-04-03,Belgium,Czech Republic,1,3,1,1,2,2,0,0
+2010-04-17,Netherlands,Malta,3,0,2,0,0,0,0,0
+2010-11-20,Czech  Republic,Netherlands,3,2,2,0,2,1,0,0
+2010-10-09,Czech  Republic,Poland,2,2,2,0,2,1,1,0
+2010-11-20,Poland,Germany,1,5,1,0,2,1,2,0
+2010-05-22,Japan,Hong Kong,10,0,12,0,1,0,0,0
+2010-10-30,Lithuania,Malta,0,3,0,0,0,2,0,0
+2010-11-06,Sweden,Lithuania,3,3,1,0,3,1,2,0
+2010-04-24,Belgium,Poland,2,5,2,0,1,1,0,0
+2010-04-24,Croatia,Netherlands,1,3,1,0,1,3,0,0
+2010-05-22,Romania,Ukraine,5,0,4,0,0,1,0,0
+2010-11-06,Canada,Belgium,6,0,5,0,2,0,1,0
+2010-11-27,Germany,Netherlands,3,4,1,0,2,0,0,0
+2011-04-16,Barbados,St Lucia,5,0,3,0,2,0,1,0
+2011-05-22,Argentina,Chile,6,0,8,0,0,0,0,0
+2011-11-05,Croatia,Latvia,4,2,4,0,1,0,0,1
+2011-12-01,Niue,Vanuatu,4,4,0,0,2,1,0,0
+2011-06-15,Namibia,Portugal,2,5,2,0,2,3,2,0
+2011-05-25,Argentina,Uruguay,10,0,10,0,2,0,2,0
+2011-04-30,Japan,Hong Kong,7,0,5,0,3,1,2,0
+2011-11-19,Czech  Republic,Netherlands,4,0,1,0,1,1,1,0
+2011-04-23,Belgium,Netherlands,4,1,2,1,2,2,1,0
+2011-06-15,Georgia,Argentina Jaguars,1,3,0,0,1,2,1,0
+2011-04-09,Sweden,Denmark,7,0,5,0,2,1,1,0
+2011-11-29,Papua New  Guinea,Vanuatu,10,1,5,0,0,1,0,0
+2011-06-10,Portugal,Argentina Jaguars,2,5,0,0,3,0,3,0
+2011-11-12,Moldova,Poland,3,0,1,0,2,1,2,0
+2011-04-30,Moldova,Netherlands,3,0,2,0,2,2,1,0
+2011-02-12,Belgium,Moldova,1,5,0,0,1,0,0,0
+2011-07-29,Mauritius,Nigeria,5,1,4,0,2,0,1,0
+2011-05-07,Japan,Kazakhstan,9,0,8,0,0,0,0,0
+2011-11-29,Solomon  Islands,Niue,4,0,1,0,3,0,2,0
+2011-04-02,Moldova,Germany,3,3,2,0,2,1,1,0
+2011-11-12,Germany,Netherlands,3,1,1,1,1,0,1,0
+2011-04-30,Malta,Croatia,2,3,1,0,2,0,2,0
+2011-12-10,Hong Kong,United Arab Emirates,5,1,7,0,2,0,2,0
+2011-12-10,Kenya,Brazil,5,0,1,0,4,1,1,0
+2011-12-01,Papua New  Guinea,Solomon Islands,6,1,0,0,0,0,0,0
+2011-05-21,Japan,Sri Lanka,11,0,10,0,1,1,1,1
+2011-10-29,Sweden,Croatia,3,1,3,0,2,2,1,0
+2011-03-12,Czech  Republic,Germany,2,5,2,0,2,3,2,0
+2011-04-30,Lithuania,Latvia,6,0,6,0,0,1,0,0
+2011-06-18,Uganda,Madagascar,9,0,4,0,3,3,3,0
+2011-05-07,Sweden,Malta,3,1,3,0,1,2,1,0
+2011-05-13,Japan,United Arab EMIRATES,12,0,13,0,0,0,0,0
+2011-11-05,Belgium,Czech Republic,7,0,5,0,0,0,0,0
+2011-11-05,Malta,Lithuania,1,2,0,1,1,1,1,0
+2011-10-08,Cyprus,Luxembourg,6,0,4,0,1,0,1,0
+2011-06-10,South Africa  Kings,Georgia,3,4,2,0,2,1,2,0
+2011-03-19,Belgium,Germany,3,3,2,0,3,2,2,0
+2011-06-12,Zimbabwe,Uganda,3,1,2,1,3,0,0,0
+2011-11-19,Poland,Germany,4,2,4,0,1,1,0,0
+2011-10-22,Lithuania,Sweden,4,2,2,0,2,6,1,0
+2011-04-09,Mexico,United States South,3,2,9,0,0,3,0,0
+2011-10-15,Poland,Czech Republic,2,2,2,0,1,2,1,0
+2011-05-07,Lithuania,Croatia,4,1,3,0,2,0,1,0
+2011-10-29,Malta,Latvia,4,2,1,0,0,0,0,0
+2011-06-15,Zimbabwe,Madagascar,6,0,2,0,0,0,0,0
+2011-12-03,Solomon  Islands,Vanuatu,5,0,4,0,3,1,1,0
+2011-04-16,Poland,Netherlands,4,2,3,0,2,1,1,1
+2011-03-19,Moldova,Czech Republic,4,0,2,0,2,1,0,1
+2011-12-03,Papua New  Guinea,Niue,6,0,3,0,1,0,1,0
+2011-08-20,Romania,Ukraine,6,1,4,0,1,3,1,0
+2011-05-14,Sweden,Latvia,7,3,5,0,4,1,3,0
+2011-11-13,Uruguay,Portugal,1,2,1,1,0,3,0,0
+2011-03-12,Poland,Belgium,3,3,2,0,2,2,1,1
+2011-11-12,Kenya,Tunisia,1,3,1,0,1,0,1,0
+2012-06-02,Wales,Barbarians (Uk) Rfc,3,3,3,0,3,0,3,0
+2012-05-26,Uruguay,Brazil,4,1,2,0,2,1,1,0
+2012-02-04,Romania,Portugal,2,1,1,0,1,0,1,0
+2012-06-10,Tonga,Japan,3,1,3,0,2,2,2,0
+2012-06-09,New Zealand,Ireland,5,3,4,0,1,1,1,0
+2012-09-15,New Zealand,South Africa,2,3,1,0,1,2,0,0
+2012-02-25,Romania,Russia,4,1,1,0,0,0,0,0
+2012-08-25,South Africa,Argentina,1,3,1,0,1,3,1,0
+2012-05-26,Argentina,Chile,0,0,0,0,0,0,0,0
+2012-06-12,Emerging  Italy,Portugal,3,3,2,0,2,3,1,0
+2012-03-17,England,Ireland,2,6,1,0,0,3,0,0
+2012-06-10,Samoa,Fiji,3,4,1,0,3,3,1,0
+2012-06-09,Australia,Wales,3,1,3,1,1,3,1,0
+2012-02-04,France,Italy,4,2,2,0,0,3,0,1
+2012-06-09,South Africa,England,2,4,0,0,1,4,0,0
+2012-06-05,Samoa,Tonga,2,2,2,0,0,6,0,0
+2012-06-16,South  Africa,England,3,3,2,1,3,3,2,0
+2012-02-05,Wales,Ireland,3,2,1,0,2,3,1,0
+2012-06-09,Georgia,Ukraine,5,0,4,0,0,1,0,0
+2012-03-17,Italy,Scotland,1,1,1,1,0,2,0,0
+2012-03-10,Portugal,Spain,2,3,2,0,1,4,0,0
+2012-09-15,Australia,Argentina,2,3,2,0,2,3,0,0
+2012-03-10,Ireland,France,2,1,2,0,1,4,0,0
+2012-06-16,Scotland,Fiji,4,3,3,0,3,2,2,0
+2012-04-07,Jamaica,Cayman Islands,1,4,1,0,2,2,1,0
+2012-02-11,England,Italy,1,4,1,0,2,1,1,0
+2012-09-29,South Africa,Australia,5,0,3,0,1,1,0,0
+2012-06-17,Romania,Emerging Italy,2,1,2,0,1,2,1,0
+2012-05-12,Japan,Korea,7,0,6,0,1,1,0,0
+2012-05-20,Argentina,Uruguay,6,0,5,0,1,0,0,0
+2012-10-06,Poland,Czech Republic,2,5,2,0,0,0,0,1
+2012-06-23,Australia,Wales,1,5,0,0,1,4,1,0
+2012-02-25,Spain,Ukraine,5,2,5,0,0,2,0,0
+2012-06-23,Fiji,Tonga,4,0,3,0,1,4,0,0
+2012-02-26,France,Scotland,2,2,2,1,2,1,2,0
+2012-06-05,Fiji,Japan,3,2,2,0,1,4,1,0
+2012-07-08,Senegal,Morocco,2,3,2,1,2,3,1,2
+2012-02-25,Ireland,Italy,5,3,4,0,1,1,1,0
+2012-10-06,Australia,Argentina,1,6,1,0,1,4,1,0
+2012-06-23,South Africa,England,1,3,0,0,1,3,0,0
+2012-06-23,New Zealand,Ireland,8,1,6,0,0,0,0,0
+2012-05-05,Japan,United Arab Emirates,11,0,13,0,0,1,0,0
+2012-03-17,Georgia,Russia,4,2,5,0,0,0,0,0
+2012-06-09,Canada,United States,3,3,2,0,3,2,2,0
+2012-02-12,Wales,Scotland,3,2,1,0,1,2,1,0
+2012-10-20,Ukraine,Sweden,1,5,1,0,1,1,1,0
+2012-06-08,Italy 'A',Russia,5,0,4,0,3,0,1,0
+2012-03-10,Georgia,Romania,1,4,1,0,1,2,1,0
+2012-03-17,Spain,Romania,1,1,1,1,0,4,0,0
+2012-09-08,Denmark,Norway,2,1,1,0,2,1,1,0
+2012-08-18,South Africa,Argentina,3,2,3,0,0,2,0,0
+2012-03-31,Romania,Ukraine,8,0,8,0,0,0,0,0
+2012-03-17,Ukraine,Portugal,4,3,3,0,3,4,3,0
+2012-03-10,Russia,Ukraine,5,1,5,0,3,0,2,0
+2012-08-18,New Zealand,Australia,2,5,1,0,1,4,1,0
+2012-05-23,Argentina,Brazil,15,0,13,0,0,0,0,0
+2012-04-28,Japan,Kazakhstan,7,0,11,0,0,0,0,0
+2012-06-16,New Zealand,Ireland,1,4,1,1,1,4,1,0
+2012-06-17,Uruguay,Portugal,4,3,3,0,1,0,1,0
+2012-06-17,United  States,Georgia,4,4,2,0,3,1,1,0
+2012-03-10,Wales,Italy,2,4,1,0,0,0,0,0
+2012-06-16,Australia,Wales,1,6,1,0,2,3,2,0
+2012-03-17,Wales,France,1,3,1,0,0,3,0,0
+2012-09-29,New Zealand,Argentina,7,3,5,0,2,0,1,0
+2012-06-23,Scotland,Samoa,2,1,2,0,1,2,1,1
+2012-06-09,Argentina,Italy,4,4,4,0,3,1,2,0
+2012-06-08,Argentina  'A',Portugal,5,2,5,0,0,3,0,0
+2012-07-04,Namibia,Senegal,2,1,2,1,0,4,0,2
+2012-10-06,New Zealand,South Africa,4,1,3,1,1,3,1,0
+2012-05-20,Chile,Brazil,1,4,1,0,0,2,0,0
+2012-06-15,Italy,Canada,1,6,1,0,1,3,1,0
+2012-03-11,England,France,3,1,3,0,1,5,1,0
+2012-06-12,Romania,Argentina 'A',2,3,2,0,2,3,1,0
+2012-09-08,New Zealand,Argentina,2,3,1,0,1,0,0,0
+2012-02-25,Wales,England,1,4,1,0,0,4,0,0
+2012-07-04,Madagascar,Morocco,4,3,3,0,4,0,4,0
+2012-06-12,Russia,Uruguay,3,0,2,0,1,2,1,0
+2012-02-11,Spain,Georgia,4,2,2,0,3,1,0,0
+2012-05-19,Japan,Hong Kong,6,0,6,0,0,0,0,0
+2012-06-23,France,Argentina,6,3,5,0,1,1,1,0
+2012-06-08,Romania,Uruguay,2,5,2,0,0,2,0,1
+2012-07-08,Madagascar,Namibia,7,1,7,0,6,1,4,1
+2012-06-17,Argentina 'A',Russia,3,3,3,0,0,3,0,0
+2012-06-05,Scotland,Australia,0,3,0,0,0,2,0,0
+2012-06-17,Samoa,Japan,3,2,3,0,4,2,0,0
+2012-02-25,Georgia,Portugal,4,2,3,0,1,0,1,0
+2012-06-23,Canada,Georgia,3,4,2,0,2,0,1,0
+2012-03-10,Ireland,Scotland,4,2,3,0,1,3,0,0
+2012-06-16,Argentina,France,2,3,2,0,1,5,0,0
+2012-08-25,New Zealand,Australia,1,5,1,0,0,0,0,0
+2012-02-11,Russia,Portugal,3,2,3,0,4,1,3,1
+2012-10-27,Australia,New Zealand,0,6,0,0,0,6,0,0
+2012-05-23,Uruguay,Chile,2,5,1,0,2,4,2,0
+2012-09-08,Australia,South Africa,2,4,2,0,1,4,1,0
