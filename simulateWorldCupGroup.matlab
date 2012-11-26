@@ -13,7 +13,9 @@ function [winner runnerup] = simulateWorldCupGroup(model,teams)
                 continue
             end
             
-            [hpts apts htries atries] = simulateGame(model,teams{n},teams{m},false);
+            opts.homeadv = false;
+            
+            [hpts apts htries atries] = simulateGame(model,teams{n},teams{m},opts);
             
             ptsfor(n,m) = hpts;
             ptsfor(m,n) = apts;

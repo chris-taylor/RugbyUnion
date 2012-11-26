@@ -1,7 +1,11 @@
-function data = loadGameData(filename,teams)
+function data = loadGameData(filename,teams,includeOthers)
 
     if nargin < 2
         teams = {};
+    end
+    
+    if nargin < 3
+        includeOthers = true;
     end
 
     fid = fopen(filename,'r');
@@ -38,7 +42,7 @@ function data = loadGameData(filename,teams)
     % Select countries
     
     if ~isempty(teams)
-        data = selectCountries(data,teams,true);
+        data = selectTeams(data,teams,includeOthers);
     end
     
     % Add regression matrix
