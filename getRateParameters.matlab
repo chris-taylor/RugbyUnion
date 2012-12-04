@@ -13,22 +13,27 @@ function [lambda_t_h lambda_p_h conv_h lambda_t_a lambda_p_a conv_a] = getRatePa
     end
 
     % Simulate the game
-    ihome = strmatch(home,model.teams,'exact');
-    iaway = strmatch(away,model.teams,'exact');
+%     ihome = strmatch(home,model.teams,'exact');
+%     iaway = strmatch(away,model.teams,'exact');
     
     if opts.homeadv
-        lambda_t_h = opts.length * (model.tries.c + model.tries.g + model.tries.a(ihome) - model.tries.d(iaway));
-        lambda_t_a = opts.length * (model.tries.c - model.tries.g + model.tries.a(iaway) - model.tries.d(ihome));
-        lambda_p_h = opts.length * (model.pens.c + model.pens.g + model.pens.a(ihome) - model.pens.d(iaway));
-        lambda_p_a = opts.length * (model.pens.c - model.pens.g + model.pens.a(iaway) - model.pens.d(ihome));
+        lambda_t_h = opts.length * (model.tries.c + model.tries.g + model.tries.a(home) - model.tries.d(away));
+        lambda_t_a = opts.length * (model.tries.c - model.tries.g + model.tries.a(away) - model.tries.d(home));
+        lambda_p_h = opts.length * (model.pens.c + model.pens.g + model.pens.a(home) - model.pens.d(away));
+        lambda_p_a = opts.length * (model.pens.c - model.pens.g + model.pens.a(away) - model.pens.d(home));
     else
-        lambda_t_h = opts.length * (model.tries.c + model.tries.a(ihome) - model.tries.d(iaway));
-        lambda_t_a = opts.length * (model.tries.c + model.tries.a(iaway) - model.tries.d(ihome));
-        lambda_p_h = opts.length * (model.pens.c + model.pens.a(ihome) - model.pens.d(iaway));
-        lambda_p_a = opts.length * (model.pens.c + model.pens.a(iaway) - model.pens.d(ihome));
+        lambda_t_h = opts.length * (model.tries.c + model.tries.a(home) - model.tries.d(away));
+        lambda_t_a = opts.length * (model.tries.c + model.tries.a(away) - model.tries.d(home));
+        lambda_p_h = opts.length * (model.pens.c + model.pens.a(home) - model.pens.d(away));
+        lambda_p_a = opts.length * (model.pens.c + model.pens.a(away) - model.pens.d(home));
     end
+    
+    lambda_t_h = max(0, lambda_t_h);
+    lambda_t_a = max(0, lambda_t_a);
+    lambda_p_h = max(0, lambda_p_h);
+    lambda_p_a = max(0, lambda_p_a);
 
-    conv_h = model.cons.p(ihome);
-    conv_a = model.cons.p(iaway);
+    conv_h = model.cons.p(home);
+    conv_a = model.cons.p(away);
 
 end

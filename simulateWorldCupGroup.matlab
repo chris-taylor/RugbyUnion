@@ -1,4 +1,4 @@
-function [winner runnerup] = simulateWorldCupGroup(model,teams)
+function output = simulateWorldCupGroup(model,teams)
 
     N = length(teams);
     
@@ -15,7 +15,7 @@ function [winner runnerup] = simulateWorldCupGroup(model,teams)
             
             opts.homeadv = false;
             
-            [hpts apts htries atries] = simulateGame(model,teams{n},teams{m},opts);
+            [junk hpts apts htries atries] = simulateGame(model,teams(n),teams(m),opts);
             
             ptsfor(n,m) = hpts;
             ptsfor(m,n) = apts;
@@ -56,6 +56,7 @@ function [winner runnerup] = simulateWorldCupGroup(model,teams)
     totaltries = sum(triesfor,2);
     
     for n = 1:N
+        result(n).team = teams(n);
         result(n).idx = n;
         result(n).matchpoints = matchpoints(n);
         result(n).ptsfor = ptsfor(n,:);
@@ -70,8 +71,15 @@ function [winner runnerup] = simulateWorldCupGroup(model,teams)
     
     sorted = bubblesort(result);
     
-    winner = teams{sorted(1).idx};
-    runnerup = teams{sorted(2).idx};
+    output.winner = sorted(1).team;
+    output.runnerup = sorted(2).team;
+    
+    output.teams = teams([sorted.idx]);
+    output.matchpoints = [sorted.matchpoints];
+    output.ptsfor = [sorted.totalpoints];
+    output.ptsdifference = [sorted.ptsdifference];
+    output.triesfor = [sorted.totaltries];
+    output.triesdifference = [sorted.triesdifference];
     
 end
 
