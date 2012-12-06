@@ -1,11 +1,13 @@
 function model = poissonRegression(data,t_half,v,t)
 
+    fprintf('Fitting poisson regression, t_half = %.10f, lambda = %.10f\n',t_half,v);
+
     % Weights
     if nargin < 2
-        t_half = 1;
+        t_half = 2;
     end
     if nargin < 3
-        v = 10;
+        v = 1;
     end
     if nargin < 4
         t = fix(now);
@@ -19,7 +21,7 @@ function model = poissonRegression(data,t_half,v,t)
     XH = data.X;  XH(XH<0) = 0;
     XA = -data.X; XA(XA<0) = 0;
     
-    iAdv  = ones(size(data.X, 1), 1);
+    iAdv  = data.homeadv;
     iHome = sum(cumsum(fliplr(XH),2),2); % takes the selection matrix and converts to team indexes
     iAway = sum(cumsum(fliplr(XA),2),2); % (as above)
     
@@ -32,23 +34,11 @@ function model = poissonRegression(data,t_half,v,t)
     model.pens  = penaltiesModel;
     model.cons  = conversionsModel;
     model.teams = data.teams;
-    model.predictHomeAdv   = @predictHomeAdv;
-    model.predictNoHomeAdv = @predictNoHomeAdv;
+    model.predict = @predict;
     
-    function p = predictHomeAdv(XH,XA)
-        p = predict(XH,XA,true);
-    end
-
-    function p = predictNoHomeAdv(XH,XA)
-        p = predict(XH,XA,false);
-    end
+    function p = predict(iHome,iAway,homeadv)
     
-    function p = predict(XH,XA,homeadv)
-        opts.homeadv = homeadv;
-        iHome = sum(cumsum(fliplr(XH),2),2); % takes the selection matrix and converts to team indexes
-        iAway = sum(cumsum(fliplr(XA),2),2); % (as above)
-    
-        [th ph ch ta pa ca] = getPoissonRegressionParameters(model,iHome,iAway,opts);
+        [th ph ch ta pa ca] = getPoissonRegressionParameters(model,iHome,iAway,homeadv,1);
         
         n = length(th);
         [x y] = ndgrid(0:150);
@@ -71,8 +61,6 @@ function model = poissonRegression(data,t_half,v,t)
             p(ii,3) = sum(sum(P(iawaywin)));
         end
         
-%         p = real(p);
-        
     end
 
 end
@@ -93,7 +81,7 @@ end
 function model = fitPoisson(x,y,iAdv,iHome,iAway,w,v)
 
     debug = false;
-
+    
     n = max([iHome; iAway]); % this line is a bit dodgy - what if a team doesn't appear in dataset?
     
     c = mean([x;y]);
@@ -106,7 +94,7 @@ function model = fitPoisson(x,y,iAdv,iHome,iAway,w,v)
     f = @(theta) negativeLL(n,theta,iAdv,iHome,iAway,x,y,w,v);
     opts = optimset();
     opts.GradObj = 'on';
-    opts.Display = 'iter';
+    opts.Display = 'off';
     
     if debug
         [fval grad1] = negativeLL(n,theta0,iAdv,iHome,iAway,x,y,w,v);

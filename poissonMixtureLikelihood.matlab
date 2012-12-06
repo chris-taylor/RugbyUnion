@@ -1,17 +1,6 @@
-function ll = poissonMixtureLikelihood(model,data,homeadv)
-
-    if nargin < 3
-        homeadv = true;
-    end
-
-    XH = data.X; XH(XH<0)=0;
-    XA = -data.X; XA(XA<0)=0;
-    opts.homeadv = homeadv;
-    iHome = sum(cumsum(fliplr(XH),2),2); % takes the selection matrix and converts to team indexes
-    iAway = sum(cumsum(fliplr(XA),2),2); % (as above)
+function ll = poissonMixtureLikelihood(model,data)
     
-%     [th ph ch ta pa ca] = getRateParameters(model,iHome,iAway,opts);
-    [th ph ch ta pa ca] = getPoissonRegressionParameters(model,iHome,iAway,opts);
+    [th ph ch ta pa ca] = getPoissonRegressionParameters(model,data.ihome,data.iaway,data.homeadv);
     
     triesll = poissonll(th,ta,data.hometries,data.awaytries);
     pensll  = poissonll(ph,pa,data.homepens+data.homedrops,data.awaypens+data.awaydrops);

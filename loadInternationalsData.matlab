@@ -3,25 +3,22 @@ function data = loadInternationalsData()
     fname = 'data/espn_internationals.csv';
     fid = fopen(fname);
     
-    if ispc
-        csv = textscan(fid,'%s %s %s %f %f %f %f %f %f %f %f\r','headerlines',1,'delimiter',',');
-    else
-        csv = textscan(fid,'%s %s %s %f %f %f %f %f %f %f %f\r','headerlines',1,'delimiter',',');
-    end
+    csv = textscan(fid,'%s %s %s %s %f %f %f %f %f %f %f %f\r','headerlines',1,'delimiter',',');
     
     fclose(fid);
     
     data.date = datenum(csv{1});
-    data.hometeam = csv{2};
-    data.awayteam = csv{3};
-    data.hometries = csv{4};
-    data.homepens = csv{5};
-    data.homecons = csv{6};
-    data.homedrops = csv{7};
-    data.awaytries = csv{8};
-    data.awaypens = csv{9};
-    data.awaycons = csv{10};
-    data.awaydrops = csv{11};
+    data.stadium = csv{2};
+    data.hometeam = csv{3};
+    data.awayteam = csv{4};
+    data.hometries = csv{5};
+    data.homepens = csv{6};
+    data.homecons = csv{7};
+    data.homedrops = csv{8};
+    data.awaytries = csv{9};
+    data.awaypens = csv{10};
+    data.awaycons = csv{11};
+    data.awaydrops = csv{12};
 
     % Only include the top 32 teams in the IRB rankings.
     
@@ -69,6 +66,24 @@ function data = loadInternationalsData()
     
     data = filterStruct(data,idx);
     
+    % Work out if there is a home advantage or not
+    
+    fid = fopen('data/stadiums.csv');
+    csv = textscan(fid,'%s %s','delimiter',',');
+    fclose(fid);
+    stadiums = containers.Map;
+    for i = 1:length(csv{1});
+        stadiums(csv{1}{i}) = csv{2}{i};
+    end
+    
+    n = length(data.hometeam);
+    data.homeadv = zeros(n,1);
+    for ii = 1:n
+        if strcmp(stadiums(data.stadium{ii}), data.hometeam{ii})
+            data.homeadv(ii) = 1;
+        end
+    end
+    
     % Get total score and win/loss stats
 
     data.homescore = 5 * data.hometries + 3 * (data.homepens + data.homedrops) + 2 * data.homecons;
@@ -95,5 +110,13 @@ function data = loadInternationalsData()
         data.X(ii,iaway) = -1;
 
     end
+    
+    % Create home/away indexes
+    
+    XH = data.X; XH(XH<0)=0;
+    XA = -data.X; XA(XA<0)=0;
+    
+    data.ihome = sum(cumsum(fliplr(XH),2),2); % takes the selection matrix and converts to team indexes
+    data.iaway = sum(cumsum(fliplr(XA),2),2); % (as above)
     
 end
