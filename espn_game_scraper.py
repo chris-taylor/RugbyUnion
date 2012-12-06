@@ -243,7 +243,7 @@ def parse_game(html):
 
     game = {}
     game['tour'] = tour
-    game['stadium'] = stadium
+    game['stadium'] = stadium.encode('ascii','ignore')
     game['local_time'] = local
     game['gmt_time'] = gmt
     game['home_team'] = home_team
