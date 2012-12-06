@@ -2,7 +2,7 @@ function cost = evaluateModel(model,data)
 
     XH = data.X; XH(XH<0) = 0;
     XA =-data.X; XA(XA<0) = 0;
-
+    
     prediction = model.predictHomeAdv(XH,XA);
     
     prediction(prediction < 0) = 0;

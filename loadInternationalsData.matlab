@@ -6,7 +6,7 @@ function data = loadInternationalsData()
     if ispc
         csv = textscan(fid,'%s %s %s %f %f %f %f %f %f %f %f\r','headerlines',1,'delimiter',',');
     else
-        csv = textscan(fid,'%s %s %s %f %f %f %f %f %f %f %f','headerlines',1,'delimiter',',');
+        csv = textscan(fid,'%s %s %s %f %f %f %f %f %f %f %f\r','headerlines',1,'delimiter',',');
     end
     
     fclose(fid);

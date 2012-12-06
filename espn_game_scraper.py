@@ -24,7 +24,7 @@ def run():
         os.remove(outfile)
 
     with open(outfile,'w') as f:
-        f.write('date,home_team,away_team,home_tries,home_penalties,home_conversions,home_drop_goals,away_tries,away_penalties,away_conversions,away_drop_goals\n')
+        f.write('date,stadium,home_team,away_team,home_tries,home_penalties,home_conversions,home_drop_goals,away_tries,away_penalties,away_conversions,away_drop_goals\n')
 
     # Pages to visit
     base = 'http://www.espnscrum.com/scrum/rugby/series/index.html?season='
@@ -63,10 +63,10 @@ def run():
             elif text in notok:         # heading: domestic tour/tournament?
                 read = False
                 continue
-            else:                       # not a heading - check if we want to scrape
-                if 'Junior' in row.text or 'U20' in row.text:
+            else:                       # not a heading
+                if 'Junior' in row.text or 'U20' in row.text:   # don't scrape U20 matches
                     continue
-                elif read:
+                if read:
                     links = [a['href'] for a in row.find_all('a') if a.text == 'Results']
                     if len(links) == 0:
                         continue
@@ -76,8 +76,6 @@ def run():
                     else:
                         print '*** Multiple links?'
                         raise ValueError
-                else:                   # if we don't want to scrape, go to next row
-                    continue
     
     # print 'Scraping recent matches'
     # scrape('http://www.espnscrum.com/scrum/rugby/match/scores/recent.html')
@@ -107,7 +105,7 @@ def scrape(url):
 
 def write_game(game,outfile):
 
-    row = [game['date'], game['home_team'], game['away_team']] + game['stats']
+    row = [game['date'], game['stadium'], game['home_team'], game['away_team']] + game['stats']
 
     with open(outfile,'a') as f:
         c = csv.writer(f)
@@ -135,6 +133,12 @@ def parse_game(html):
             return None
 
     # parse scoreline
+    # need to be smarter about doing this
+    # example scorelines to be parsed:
+    #    Portugal 31 - 32 England (FT)
+    #    Russia 29 (13) - 43 (21) Romania (FT)
+    #    ... and others?
+    #
     scoreline = bs('td',{'class':'liveSubNavText1'})[0].text
     scoreline = scoreline.replace('(FT)','').strip()
     h, a = [s.strip() for s in scoreline.split(' - ')]
@@ -225,7 +229,7 @@ def parse_game(html):
     else:
         return None
 
-    # check result against scoreline here?
+    # check result against scoreline
 
     if 5 * home_tries + 3 * (home_pens + home_drops) + 2 * home_cons != hpts:
         print "(*** home scores don't match)",
@@ -276,6 +280,7 @@ def parse_number_of(thing,string):
         'Tries Dixon 2, Coles'      => 3
         'Tries Martin, Johnson'     => 2
         'Tries none'                => 0
+        'Tries 3'                   => 3
     '''
     string = string.replace(thing,'').strip()
     if string == 'none':

@@ -12,10 +12,6 @@ function [lambda_t_h lambda_p_h conv_h lambda_t_a lambda_p_a conv_a] = getRatePa
         opts.length = 1;
     end
 
-    % Simulate the game
-%     ihome = strmatch(home,model.teams,'exact');
-%     iaway = strmatch(away,model.teams,'exact');
-    
     if opts.homeadv
         lambda_t_h = opts.length * (model.tries.c + model.tries.g + model.tries.a(home) - model.tries.d(away));
         lambda_t_a = opts.length * (model.tries.c - model.tries.g + model.tries.a(away) - model.tries.d(home));
@@ -28,10 +24,10 @@ function [lambda_t_h lambda_p_h conv_h lambda_t_a lambda_p_a conv_a] = getRatePa
         lambda_p_a = opts.length * (model.pens.c + model.pens.a(away) - model.pens.d(home));
     end
     
-    lambda_t_h = max(0, lambda_t_h);
-    lambda_t_a = max(0, lambda_t_a);
-    lambda_p_h = max(0, lambda_p_h);
-    lambda_p_a = max(0, lambda_p_a);
+    lambda_t_h = max(opts.length/2, lambda_t_h);
+    lambda_t_a = max(opts.length/2, lambda_t_a);
+    lambda_p_h = max(opts.length/2, lambda_p_h);
+    lambda_p_a = max(opts.length/2, lambda_p_a);
 
     conv_h = model.cons.p(home);
     conv_a = model.cons.p(away);

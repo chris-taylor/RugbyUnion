@@ -6,28 +6,26 @@ function ll = poissonMixtureLikelihood(model,data,homeadv)
 
     XH = data.X; XH(XH<0)=0;
     XA = -data.X; XA(XA<0)=0;
+    opts.homeadv = homeadv;
+    iHome = sum(cumsum(fliplr(XH),2),2); % takes the selection matrix and converts to team indexes
+    iAway = sum(cumsum(fliplr(XA),2),2); % (as above)
     
-    triesll = poissonll(model.tries.c,model.tries.g,model.tries.a,model.tries.d,XH,XA,data.hometries,data.awaytries,homeadv);
-    pensll  = poissonll(model.pens.c,model.pens.g,model.pens.a,model.pens.d,XH,XA,data.homepens+data.homedrops,data.awaypens+data.awaydrops,homeadv);
-    consll  = binoll(model.cons.p,XH,data.hometries,data.homecons) + binoll(model.cons.p,XA,data.awaytries,data.awaycons);
+%     [th ph ch ta pa ca] = getRateParameters(model,iHome,iAway,opts);
+    [th ph ch ta pa ca] = getPoissonRegressionParameters(model,iHome,iAway,opts);
+    
+    triesll = poissonll(th,ta,data.hometries,data.awaytries);
+    pensll  = poissonll(ph,pa,data.homepens+data.homedrops,data.awaypens+data.awaydrops);
+    consll  = binoll(ch,data.hometries,data.homecons) + binoll(ca,data.awaytries,data.awaycons);
     
     ll = mean(triesll + pensll + consll);
     
 end
 
-function ll = poissonll(c,g,a,d,XH,XA,x,y,homeadv)
-    if homeadv
-        lambda = c + XH * a - XA * d + g; % home team scoring rate
-        mu     = c + XA * a - XH * d - g; % away team scoring rate
-    else
-        lambda = c + XH * a - XA * d;
-        mu     = c + XA * a - XH * d;
-    end
+function ll = poissonll(lambda,mu,x,y)
     ll = - lambda - mu + x .* log(lambda) + y .* log(mu) - logfact(x) - logfact(y);
 end
 
-function ll = binoll(teamp,X,tries,cons)
-    p  = X * teamp;
+function ll = binoll(p,tries,cons)
     ll = cons .* log(p) + (tries - cons) .* log(1-p) + lognchoosek(tries,cons);
 end
 
