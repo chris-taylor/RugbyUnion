@@ -1,2 +1,9 @@
+*.m
 *.m~
+
+~
 .DS_Store
+
+
+data/betfair/*.csv
+data/betfair/*.zip
