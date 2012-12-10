@@ -51,15 +51,17 @@ function backtest(data,events)
         
         win_flag = logical([ev.selection.win_flag]);
         winnings = sum(stake .* mid .* win_flag - abs(stake) .* (spd/2) - stake);
+        %              \______________________/   \___________________/   \___/
+        %                Winnings @ mid rate       Cost due to spread     Stake
         
         if winnings > 0
-            winnings = df * winnings;
+            winnings = df * winnings;       % Commission paid to betfair
         end
         
         % Disp
-        fprintf('P(Home): %4.1f%% (market), %4.1f%% (model)\n',100/mid(1),100*prob(1))
-        fprintf('P(Away): %4.1f%% (market), %4.1f%% (model)\n',100/mid(2),100*prob(2))
-        fprintf('P(Draw): %4.1f%% (market), %4.1f%% (model)\n',100/mid(3),100*prob(3))
+        fprintf('P(Home): %4.1f%% (model), %4.1f%% (market)\n',100*prob(1),100/mid(1))
+        fprintf('P(Away): %4.1f%% (model), %4.1f%% (market)\n',100*prob(2),100/mid(2))
+        fprintf('P(Draw): %4.1f%% (model), %4.1f%% (market)\n',100*prob(3),100/mid(3))
         fprintf('S(Home): %.1f\n',stake(1))
         fprintf('S(Away): %.1f\n',stake(2))
         fprintf('S(Draw): %.1f\n',stake(3))
