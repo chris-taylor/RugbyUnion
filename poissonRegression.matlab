@@ -1,17 +1,21 @@
 function model = poissonRegression(data,t_half,v,t)
 
-    fprintf('Fitting poisson regression, t_half = %.10f, lambda = %.10f\n',t_half,v);
-
     % Weights
     if nargin < 2
-        t_half = 2;
+        t_half = 2.25;
     end
     if nargin < 3
-        v = 1;
+        v = 1.33;
     end
     if nargin < 4
         t = fix(now);
     end
+    
+    % Filter data after the cutoff
+    time_index = data.date < t;
+    data = filterStruct(data,time_index);
+    
+%     fprintf('Fitting poisson regression, t_half = %.10f, lambda = %.10f\n',t_half,v);
     
     delta_t = t - data.date;
     eta = log(2) / (365 * t_half);
@@ -57,8 +61,8 @@ function model = poissonRegression(data,t_half,v,t)
             P = kron(probhome, probaway');
         
             p(ii,1) = sum(sum(P(ihomewin)));
-            p(ii,2) = sum(sum(P(idraw)));
-            p(ii,3) = sum(sum(P(iawaywin)));
+            p(ii,2) = sum(sum(P(iawaywin)));
+            p(ii,3) = sum(sum(P(idraw)));
         end
         
     end

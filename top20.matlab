@@ -15,7 +15,7 @@ top20 = {
     'Canada'
     'Argentina'
     'Japan'
-    'United States'
+    'United States of America'
     'Georgia'
     'Romania'
     'Spain'

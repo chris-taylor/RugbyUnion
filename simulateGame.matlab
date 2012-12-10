@@ -27,7 +27,7 @@ function [result score_home score_away htries atries] = simulateGame(model,home,
     end
     
     % Simulate the game
-    [lambda_t_h lambda_p_h conv_h lambda_t_a lambda_p_a conv_a] = getRateParameters(model,home,away,opts);
+    [lambda_t_h lambda_p_h conv_h lambda_t_a lambda_p_a conv_a] = getPoissonRegressionParameters(model,home,away,opts.homeadv,opts.length);
 
     htries = poissrnd(lambda_t_h,n,1);
     hpens  = poissrnd(lambda_p_h,n,1);
@@ -54,7 +54,7 @@ function [result score_home score_away htries atries] = simulateGame(model,home,
             opts_extratime = opts;
             opts_extratime.length = 0.25;
             opts_extratime.extratime = false;
-            result = simulateGame(model,home,away,opts_extratime,1);
+            result = simulateGame(model,home,away,opts_extratime);
         end
         
         if strcmp(result,'draw') && opts.extratime && opts.suddendeath
@@ -102,7 +102,7 @@ end
 function result = simulateSuddenDeath(model,home,away,opts)
     opts.length = 0.125;
     
-    [lambda_t_h lambda_p_h junk lambda_t_a lambda_p_a] = getRateParameters(model,home,away,opts);
+    [lambda_t_h lambda_p_h junk lambda_t_a lambda_p_a] = getPoissonRegressionParameters(model,home,away,opts.homeadv,opts.length);
     
     % Times of first try/penalty (the function exprnd generates
     % exponentially distributed random variables, and takes the mean
@@ -126,7 +126,7 @@ function result = simulateSuddenDeath(model,home,away,opts)
 end
 
 function result = simulateKickingCompetition(model,home,away)
-    [junk junk conv_h junk junk conv_a] = getRateParameters(model,home,away);
+    [junk junk conv_h junk junk conv_a] = getPoissonRegressionParameters(model,home,away,0);
     
     % First take 5 kicks each
     home_kicks = binornd(5,conv_h);

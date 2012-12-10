@@ -1,4 +1,4 @@
-function result = simulateKnockout(model,teams)
+function result = simulateKnockout(model,teams,host)
 
     nrounds = log2(length(teams));
     
@@ -8,13 +8,13 @@ function result = simulateKnockout(model,teams)
     
     teams_ = teams;
     for n = 1:nrounds-2
-        teams_ = simulateRound(model,teams_);
+        teams_ = simulateRound(model,teams_,host);
     end
     
-    [semiFinalWinners semiFinalLosers] = simulateRound(model,teams_);
+    [semiFinalWinners semiFinalLosers] = simulateRound(model,teams_,host);
     
-    [first second] = simulateRound(model,semiFinalWinners);
-    [third fourth] = simulateRound(model,semiFinalLosers);
+    [first second] = simulateRound(model,semiFinalWinners,host);
+    [third fourth] = simulateRound(model,semiFinalLosers,host);
 
     result.winner = first;
     result.second = second;
@@ -27,7 +27,7 @@ function result = simulateKnockout(model,teams)
     
 end
 
-function [winners losers] = simulateRound(model,teams)
+function [winners losers] = simulateRound(model,teams,host)
     ngames = length(teams) / 2;
     winners = zeros(ngames,1);
     losers = zeros(ngames,1);
@@ -37,7 +37,14 @@ function [winners losers] = simulateRound(model,teams)
         home = teams(2*n-1);
         away = teams(2*n);
         
-        opts.homeadv            = false;
+        if home == host
+            opts.homeadv = 1;
+        elseif away == host
+            opts.homeadv = -1;
+        else
+            opts.homeadv = 0;
+        end
+        
         opts.extratime          = true;
         opts.suddendeath        = true;
         opts.kickingcompetition = true;

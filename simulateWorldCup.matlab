@@ -1,4 +1,33 @@
-function result = simulateWorldCup(model,teams)
+function result = simulateWorldCup(model,host,teams)
+
+    % Default teams
+    if nargin < 3
+        teams = {
+            'New Zealand'
+            'South Africa'
+            'Australia'
+            'France'
+            'England'
+            'Ireland'
+            'Samoa'
+            'Argentina'
+            'Wales'
+            'Italy'
+            'Tonga'
+            'Scotland'
+            'Fiji'
+            'Canada'
+            'Japan'
+            'United States of America'
+            'Georgia'
+            'Spain'
+            'Romania'
+            'Russia'
+        };
+    end
+
+    % Host idx
+    ihost = strmatch(host,model.teams,'exact');
 
     switch class(teams{1})
         
@@ -36,12 +65,12 @@ function result = simulateWorldCup(model,teams)
             
     end
     
-    A = simulateWorldCupGroup(model,groups{1});
-    B = simulateWorldCupGroup(model,groups{2});
-    C = simulateWorldCupGroup(model,groups{3});
-    D = simulateWorldCupGroup(model,groups{4});
+    A = simulateWorldCupGroup(model,groups{1},ihost);
+    B = simulateWorldCupGroup(model,groups{2},ihost);
+    C = simulateWorldCupGroup(model,groups{3},ihost);
+    D = simulateWorldCupGroup(model,groups{4},ihost);
     
-    result = simulateKnockout(model,[B.winner, A.runnerup, C.winner, D.runnerup, A.winner, B.runnerup, D.winner, C.runnerup]);
+    result = simulateKnockout(model,[B.winner, A.runnerup, C.winner, D.runnerup, A.winner, B.runnerup, D.winner, C.runnerup],ihost);
     
     result.A = A;
     result.B = B;

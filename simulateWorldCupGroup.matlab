@@ -1,4 +1,4 @@
-function output = simulateWorldCupGroup(model,teams)
+function output = simulateWorldCupGroup(model,teams,ihost)
 
     N = length(teams);
     
@@ -13,7 +13,13 @@ function output = simulateWorldCupGroup(model,teams)
                 continue
             end
             
-            opts.homeadv = false;
+            if n == ihost
+                opts.homeadv = 1;
+            elseif m == ihost
+                opts.homeadv = -1;
+            else
+                opts.homeadv = 0;
+            end
             
             [junk hpts apts htries atries] = simulateGame(model,teams(n),teams(m),opts);
             
