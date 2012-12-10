@@ -119,4 +119,8 @@ function data = loadInternationalsData()
     data.ihome = sum(cumsum(fliplr(XH),2),2); % takes the selection matrix and converts to team indexes
     data.iaway = sum(cumsum(fliplr(XA),2),2); % (as above)
     
+    % Sort and remove duplicates
+    
+    data = removeDuplicates(data);
+    
 end
